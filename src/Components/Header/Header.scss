@@ -1,3 +1,9 @@
-.header {
-  color: blue;
+@import '../../stylesheets/global';
+
+.page-header {
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  background: red;
+  z-index: 1;
 }
