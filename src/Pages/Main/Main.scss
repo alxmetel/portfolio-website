@@ -1,0 +1,19 @@
+@import '../../stylesheets/global';
+@import '../../stylesheets/layout';
+
+.page-main-section {
+  margin-top: $header-height;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  .content-container {
+    max-width: $content-container-width;
+    width: $content-container-width;
+    background: yellowgreen;
+
+    @include media-tablet {
+      background: brown;
+    }
+  }
+}

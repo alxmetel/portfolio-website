@@ -1,0 +1,39 @@
+// MEDIA QUERIES
+
+// Phones, smaller than iPhone 8
+@mixin media-phone-small {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+
+// Phones, iPhone 8 - iPhone 8 Plus
+@mixin media-phone {
+  @media (min-width: 375px) and (max-width: 420px) {
+    @content;
+  }
+}
+
+// Phones, landscape view
+@mixin media-phone-land {
+  @media (min-width: 421px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+// Tablets
+@mixin media-tablet {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+// iPad Pro 12", Laptops, Desktops
+@mixin media-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// VARIABLES
+$content-container-width: 1200px;
