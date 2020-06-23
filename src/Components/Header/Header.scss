@@ -2,8 +2,22 @@
 
 .page-header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: $header-height;
-  background: red;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  
+  nav {
+    ul {
+      display: flex;
+      li {
+        margin-right: 20px;
+      }
+    }
+  }
 }

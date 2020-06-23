@@ -2,10 +2,16 @@
 @import '../../stylesheets/layout';
 
 .page-main-section {
-  margin-top: $header-height;
+  // margin-top: $header-height;
+  margin-bottom: $footer-height;
   flex: 1;
   display: flex;
   justify-content: center;
+  z-index: 1;
+
+  .page-content {
+    width: 100%;
+  }
 
   .content-container {
     max-width: $content-container-width;
