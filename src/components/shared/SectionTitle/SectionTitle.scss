@@ -1,0 +1,24 @@
+@import '../../../stylesheets/layout';
+@import '../../../stylesheets/global';
+
+.section-title {
+  margin-bottom: 60px;
+  @include media-medium {
+    margin-bottom: 40px;
+  }
+  @include media-small {
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: 400;
+    color: $section-title-color;
+    text-transform: uppercase;
+    @include media-medium {
+      font-size: 32px;
+    }
+    @include media-small {
+      font-size: 24px;
+    }
+  }
+}

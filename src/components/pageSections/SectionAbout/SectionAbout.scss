@@ -1,0 +1,91 @@
+@import '../../../stylesheets/layout';
+@import '../../../stylesheets/global';
+
+.section-about {
+  display: flex;
+  justify-content: center;
+  .content-container {
+    padding-top: 180px;
+    padding-bottom: 20px;
+    @include media-medium {
+      padding-top: 100px;
+    }
+    @include media-small {
+      padding-top: 60px;
+    }
+    .section-title {
+      position: relative;
+      z-index: 1;
+    }
+    .text-block {
+      position: relative;
+      width: 70%;
+      height: 100%;
+      z-index: 1;
+      font-size: 22px;
+      line-height: 1.8;
+      @include media-medium {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+      @include media-small {
+        width: 80%;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+    .photo-block {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: url(../../../assets/my-photo.jpeg);
+      background-repeat: no-repeat;
+      background-position: top -130px right;
+      background-size: cover;
+      @include media-medium {
+        width: 60%;
+        background-position: top 40% right;
+      }
+      @include media-small {
+        width: 100%;
+        background-position: top right;
+      }
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,.8) 60%,
+        rgba(0,0,0,.6) 80%,
+        rgba(0,0,0,.3) 100%
+      );
+      @include media-medium {
+        background-image: linear-gradient(
+          to right,
+          rgba(0,0,0,1) 0%,
+          rgba(0,0,0,1) 30%,
+          rgba(0,0,0,.8) 60%,
+          rgba(0,0,0,.6) 80%,
+          rgba(0,0,0,.3) 100%
+        );
+      }
+      @include media-small {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0,0,0,1) 0%,
+          rgba(0,0,0,.8) 30%,
+          rgba(0,0,0,.7) 100%
+        );
+      }
+    }
+  }
+}
+

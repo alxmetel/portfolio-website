@@ -9,14 +9,14 @@
 
 // Phones, iPhone 8 - iPhone 8 Plus
 @mixin media-phone {
-  @media (min-width: 375px) and (max-width: 420px) {
+  @media (min-width: 375px) and (max-width: 499px) {
     @content;
   }
 }
 
 // Phones, landscape view
 @mixin media-phone-land {
-  @media (min-width: 421px) and (max-width: 767px) {
+  @media (min-width: 500px) and (max-width: 767px) {
     @content;
   }
 }
@@ -35,5 +35,19 @@
   }
 }
 
-// VARIABLES
-$content-container-width: 1200px;
+
+// COMBINED
+
+// Small
+@mixin media-small {
+  @media (max-width: 499px) {
+    @content;
+  }
+}
+
+// Medium
+@mixin media-medium {
+  @media (min-width: 500px) and (max-width: 1199px) {
+    @content;
+  }
+}

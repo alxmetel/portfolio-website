@@ -1,8 +1,7 @@
-@import '../../stylesheets/global';
-@import '../../stylesheets/layout';
+@import '../../../stylesheets/global';
+@import '../../../stylesheets/layout';
 
 .page-main-section {
-  // margin-top: $header-height;
   margin-bottom: $footer-height;
   flex: 1;
   display: flex;
@@ -14,12 +13,9 @@
   }
 
   .content-container {
+    position: relative;
     max-width: $content-container-width;
     width: $content-container-width;
-    background: yellowgreen;
-
-    @include media-tablet {
-      background: brown;
-    }
+    padding: 0 20px;
   }
 }
