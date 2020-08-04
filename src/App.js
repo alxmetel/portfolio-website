@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
-import Header from './components/Header/Header';
-import Main from './pages/Main/Main';
-import Footer from './components/Footer/Footer';
+import Header from './components/pageSections/Header/Header';
+import Main from './components/pageSections/Main/Main';
+import Footer from './components/pageSections/Footer/Footer';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App dark">
         <Header />
         <Main />
         <Footer />

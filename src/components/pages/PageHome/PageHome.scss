@@ -1,0 +1,16 @@
+@import '../../../stylesheets/layout';
+@import '../../../stylesheets/global';
+
+.page-home {
+  .main-content {
+    margin-top: calc(700px - 10vw);
+    clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
+    background: rgba(0, 0, 0, 1);
+    @include media-medium {
+      margin-top: calc(500px - 10vw);
+    }
+    @include media-small {
+      margin-top: calc(500px - 10vw);
+    }
+  }
+}
