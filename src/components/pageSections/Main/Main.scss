@@ -1,5 +1,4 @@
-@import '../../../stylesheets/global';
-@import '../../../stylesheets/layout';
+@import '../../../stylesheets/variables';
 
 .page-main-section {
   margin-bottom: $footer-height;
@@ -7,15 +6,4 @@
   display: flex;
   justify-content: center;
   z-index: 1;
-
-  .page-content {
-    width: 100%;
-  }
-
-  .content-container {
-    position: relative;
-    max-width: $content-container-width;
-    width: $content-container-width;
-    padding: 0 20px;
-  }
 }

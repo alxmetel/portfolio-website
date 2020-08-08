@@ -1,0 +1,24 @@
+@import '../../../stylesheets/variables';
+
+.button {
+  min-width: 150px;
+  min-height: 50px;
+  border: 1px $golden-color solid;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-decoration: none;
+  transition: all .05s ease-in-out;
+  &:hover {
+    border: 1px $golden-color-hover solid;
+    span {
+      color: $golden-color-hover;
+    }
+  }
+  span {
+    color: $golden-color;
+    transition: all .05s ease-in-out;
+  }
+}
