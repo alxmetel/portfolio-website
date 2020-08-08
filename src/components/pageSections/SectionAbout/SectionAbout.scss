@@ -1,9 +1,7 @@
-@import '../../../stylesheets/layout';
-@import '../../../stylesheets/global';
+@import '../../../stylesheets/media';
 
 .section-about {
-  display: flex;
-  justify-content: center;
+  margin-bottom: 80px;
   .content-container {
     padding-top: 180px;
     padding-bottom: 20px;
@@ -39,17 +37,19 @@
       width: 50%;
       height: 100%;
       top: 0;
-      right: 0;
+      right: 20px;
       background: url(../../../assets/my-photo.jpeg);
       background-repeat: no-repeat;
       background-position: top -130px right;
       background-size: cover;
       @include media-medium {
         width: 60%;
+        right: 0;
         background-position: top 40% right;
       }
       @include media-small {
         width: 100%;
+        right: 0;
         background-position: top right;
       }
     }

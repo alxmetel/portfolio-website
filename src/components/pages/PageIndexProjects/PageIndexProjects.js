@@ -4,7 +4,7 @@ const PageIndexProjects = () => {
   
   useEffect(() => {
     fetchProjectsData();
-  });
+  }, []);
 
   const fetchProjectsData = () => {
     const url = 'https://portfolio-website-18313.firebaseio.com/projects.json';

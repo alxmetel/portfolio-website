@@ -5,6 +5,10 @@
         "title": "About Me",
         "p1": "Professional and enthusiastic software developer, specializing in ReactJS and in implementing complex UI, with more than 3 years of commercial work experience in developing beautiful and functional websites and applications for various industries.",
         "p2": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus."
+      },
+      "projects": {
+        "title": "My Projects",
+        "button_all_projects": "View All Projects"
       }
     }
   }

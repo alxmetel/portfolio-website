@@ -5,7 +5,7 @@ import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 
 const SectionAbout = () => {
   return (
-    <section className="section-about">
+    <section className="page-section section-about">
       <div className="content-container">
         <SectionTitle content={data.siteData.home.about.title} />
         <div className="text-block">

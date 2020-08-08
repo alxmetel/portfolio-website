@@ -1,16 +1,13 @@
-$header-height: 60px;
-$footer-height: 80px;
-$content-container-width: 1200px;
-
-// Dark Scheme
-$main-font-color: rgba(256, 256, 256, 0.6);
-$section-title-color: #efe1b3;
+@import './variables';
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   min-width: 320px;
+  * {
+    box-sizing: border-box;
+  }
   
   // Dark Mode
   .dark {
@@ -19,3 +16,19 @@ body {
   }
 }
 
+.page-content {
+  width: 100%;
+}
+
+.page-section {
+  display: flex;
+  justify-content: center;
+}
+
+.content-container {
+  position: relative;
+  max-width: $content-container-width;
+  // width: $content-container-width;
+  width: 100%;
+  padding: 0 20px;
+}

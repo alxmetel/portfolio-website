@@ -1,0 +1,185 @@
+@import '../../../stylesheets/media';
+@import '../../../stylesheets/variables';
+
+.section-projects {
+  margin-bottom: 80px;
+  .content-container {
+    @include media-medium {
+      padding: 0;
+    }
+    @include media-small {
+      padding: 0;
+    }
+
+    // Section Title
+    .section-title {
+      padding: 0 20px;
+    }
+
+    // Slider Container
+    .slider-container {
+      margin-bottom: 100px;
+      @include media-small {
+        margin-bottom: 80px;
+      }
+    
+      // Slick Arrows
+      .slick-arrow {
+        height: 100%;
+        width: 35%;
+        z-index: 1;
+        &:before {
+          content: '';
+        }
+        &.slick-prev {
+          cursor: url('../../../assets/slider-arrow-prev.png'), auto;
+        }
+        &.slick-next {
+          cursor: url('../../../assets/slider-arrow-next.png'), auto;
+        }
+      }
+
+      // Slick Dots
+      .slick-dots {
+        bottom: -50px;
+        z-index: 1;
+        @include media-small {
+          bottom: -40px;
+        }
+        li {
+          button::before {
+            color: rgba(256, 256, 256, .7);
+            color: $golden-color;
+            font-size: 10px;
+            @include media-small {
+              font-size: 9px;
+            }
+          }
+        }
+      }
+
+      // Project Card
+      .project-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 400px;
+        margin: 20px;
+        overflow: hidden;
+        opacity: .4;
+        pointer-events: none;
+        transition: all .3s ease-in-out;
+        @include media-small {
+          height: 300px;
+        }
+    
+        // Card Shading
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 60%;
+          left: 0;
+          bottom: 0;
+          background: linear-gradient(180deg, transparent 0, rgba(0,0,0,.8) 70%);
+        }
+
+        // Image
+        .project-image {
+          position: relative;
+          width: 100%;
+          object-fit: cover;
+          transform: scaleY(1);
+          transition: transform 1s linear;
+        }
+
+        // Text
+        .project-text-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          color: #fff;
+          position: absolute;
+          padding: 0 20px 20px;
+          width: 100%;
+          height: 20%;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          transition: height .5s ease-in-out;
+          .project-title {
+            color: $golden-color;
+            font-weight: 500;
+            font-size: 24px;
+            @include media-small {
+              font-size: 22px;
+            }
+          }
+          .project-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            line-height: 1.5;
+            color: rgba(256,256,256,.7);
+            @include media-small {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .slick-slide {
+        transition: all .3s ease-in-out;
+      }
+    
+      // Center card
+      .slick-center {
+        transform: scale(1.1);
+        .project-card {
+          pointer-events: auto;
+          opacity: 1;
+          .project-image {
+            transform: scale(1.2);
+            transition: transform 5s linear;
+          }
+          .project-text-container {
+            height: 60%;
+            transition: all .8s ease-in-out;
+            .project-description {
+              opacity: 1;
+              transition: opacity .5s ease-in-out;
+              transition-delay: .3s;
+            }
+          }
+        }
+      }
+    }
+
+    // Button "View All Projects"
+    .button-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 0 20px;
+      .button {
+        min-height: 60px;
+        padding: 0 40px;
+        border-radius: 30px;
+        font-size: 24px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        @include media-small {
+          min-height: 50px;
+          padding: 0 24px;
+          border-radius: 25px;
+          font-size: 16px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
