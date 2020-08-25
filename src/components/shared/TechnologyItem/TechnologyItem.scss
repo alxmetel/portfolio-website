@@ -1,0 +1,32 @@
+@import '../../../stylesheets/variables';
+
+.tech-item {
+  min-width: 200px;
+  min-height: 100px;
+  border: 1px $golden-color solid;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 30px 5px 5px;
+  margin-bottom: 20px;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    border: 1px $golden-color-hover solid;
+    .tech-name {
+      color: $golden-color-hover;
+    }
+  }
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  .tech-image {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
+  .tech-name {
+    font-size: 20px;
+    color: $golden-color;
+  }
+}

@@ -7,16 +7,28 @@ import ProjectCard from '../../shared/ProjectCard/ProjectCard';
 import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
-const SectionProjects = props => {
-  const { data } = props;
+const SectionProjects = () => {
 
+  const [data, setData] = useState(null);
   const [dataIsReady, setDataIsReady] = useState(false);
 
   useEffect(() => {
-    if (data.length != 0) {
+    fetchProjectsData();
+  }, []);
+
+  useEffect(() => {
+    if (data != null) {
       setDataIsReady(true);
     }
   }, [data]);
+
+  function fetchProjectsData() {
+    const url = 'https://portfolio-website-18313.firebaseio.com/projects.json';
+
+    fetch(url).then(response => response.json()).then(data => {
+      setData(data);
+    })
+  }
 
   function renderProjectCards() {
     return sortArrayByValue(data, 'desc').map(elem => {

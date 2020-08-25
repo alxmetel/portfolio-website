@@ -8,6 +8,9 @@
     "projects": {
       "title": "My Projects",
       "button_all_projects": "View All Projects"
+    },
+    "skills": {
+      "title": "My Skills"
     }
   }
 }

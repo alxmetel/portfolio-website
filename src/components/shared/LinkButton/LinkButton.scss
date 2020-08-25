@@ -10,7 +10,7 @@
   align-items: center;
   padding: 0 20px;
   text-decoration: none;
-  transition: all .05s ease-in-out;
+  transition: all .1s ease-in-out;
   &:hover {
     border: 1px $golden-color-hover solid;
     span {
@@ -19,6 +19,6 @@
   }
   span {
     color: $golden-color;
-    transition: all .05s ease-in-out;
+    transition: all .1s ease-in-out;
   }
 }
