@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './SectionProjects.scss';
 import SlickSlider from '../../shared/SlickSlider/SlickSlider';
 import siteData from '../../../siteData.json';
@@ -7,28 +7,8 @@ import ProjectCard from '../../shared/ProjectCard/ProjectCard';
 import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
-const SectionProjects = () => {
-
-  const [data, setData] = useState(null);
-  const [dataIsReady, setDataIsReady] = useState(false);
-
-  useEffect(() => {
-    fetchProjectsData();
-  }, []);
-
-  useEffect(() => {
-    if (data != null) {
-      setDataIsReady(true);
-    }
-  }, [data]);
-
-  function fetchProjectsData() {
-    const url = 'https://portfolio-website-18313.firebaseio.com/projects.json';
-
-    fetch(url).then(response => response.json()).then(data => {
-      setData(data);
-    })
-  }
+const SectionProjects = props => {
+  const { data } = props;
 
   function renderProjectCards() {
     return sortArrayByValue(data, 'desc').map(elem => {
@@ -70,16 +50,12 @@ const SectionProjects = () => {
       ]
     }
 
-    if (dataIsReady) {
-      return (
-        <SlickSlider
-          settings={sliderSettings}
-          slides={renderProjectCards()}
-        />
-      )
-    } else {
-      return null;
-    }
+    return (
+      <SlickSlider
+        settings={sliderSettings}
+        slides={renderProjectCards()}
+      />
+    )
   }  
 
   return (

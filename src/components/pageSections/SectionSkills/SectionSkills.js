@@ -4,44 +4,52 @@ import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import TechnologyItem from '../../shared/TechnologyItem/TechnologyItem';
 
-const SectionSkills = () => {
+const SectionSkills = props => {
+  const { technologiesData, projectsData } = props;
   
-  const [dataIsReady, setDataIsReady] = useState(false);
   const [sortedData, setSortedData] = useState(null);
-
+  
   useEffect(() => {
-    fetchTechnologiesData();
+    sortTechByCategory();
   }, []);
 
-  function fetchTechnologiesData() {
-    const url = 'https://portfolio-website-18313.firebaseio.com/technologies.json';
-
-    fetch(url).then(response => response.json()).then(data => {
-      sortTechByCategory(data);
-    })
-  }
-
-  function sortTechByCategory(data) {
+  function sortTechByCategory() {
     let sorted = {};
-    data.map(elem => {
+    technologiesData.forEach(elem => {
       if (sorted[elem.category] === undefined) {
         sorted[elem.category] = [];
+        sorted[elem.category].push(elem);
       } else {
         sorted[elem.category].push(elem);
       }
     });
     setSortedData(sorted);
-    setDataIsReady(true);
+  }
+
+  function getProjectsByTechnology(techId) {
+    let projects = [];
+    projectsData.forEach(elem => {
+      if (elem.tech_stack !== undefined && elem.tech_stack.includes(techId)) {
+        projects.push(elem);
+      }
+    });
+    return projects;
   }
 
   function renderTechItems(arr) {
     return arr.map((elem, i) => {
-      return <TechnologyItem data={elem} key={i} />
+      return (
+          <TechnologyItem
+            projectsData={getProjectsByTechnology(elem.id)}
+            technologiesSortedData={elem}
+            key={i}
+          />
+        )
     })
   }
 
   function renderStructuredTechList() {
-    if (dataIsReady) {
+    if (sortedData !== null) {
       return Object.keys(sortedData).map((category, i) => {
         return (
           <div className="tech-category-block" key={i}>
