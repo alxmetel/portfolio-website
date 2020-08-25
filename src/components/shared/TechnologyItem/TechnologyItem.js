@@ -1,6 +1,6 @@
 import React from 'react';
 import './TechnologyItem.scss';
-
+import siteData from '../../../siteData.json';
 import { Menu, Dropdown } from 'antd';
 
 const TechnologyItem = props => {
@@ -10,8 +10,9 @@ const TechnologyItem = props => {
     projectsData.map((elem, i) => {
       return (
         <Menu.Item key={i}>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
-            {elem.title}
+          <a href="http://www.alipay.com/" className="dropdown-menu-item">
+            <img src={elem.image_small} className="project-image" alt={elem.title} />
+            <div className="project-title">{elem.title}</div>
           </a>
         </Menu.Item>
       )  
@@ -20,13 +21,13 @@ const TechnologyItem = props => {
 
   const dropdownMenu = (
     <Menu>
-      <div>Where the technology was used:</div>
+      <header className="dropdown-menu-head">{siteData.home.skills.dropdown_menu_head}</header>
       {dropdownMenuItems}
     </Menu>
   );
 
   return (
-    <Dropdown overlay={dropdownMenu}>
+    <Dropdown overlay={dropdownMenu} trigger={['click']}>
       <div className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <div className="tech-item">
             <img src={technologiesSortedData.image} className="tech-image" alt={technologiesSortedData.name} />

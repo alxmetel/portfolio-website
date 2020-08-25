@@ -1,12 +1,20 @@
+@import '../../../stylesheets/variables';
+@import '../../../stylesheets/media';
+
 .section-skills {
   .skills-container {
     .tech-category-block {
-      margin-bottom: 40px;
-      .tech-category-name {
-      
+      margin-bottom: 60px;
+      @include media-small {
+        margin-bottom: 40px;
       }
-      .tech-items-container {
-
+      .tech-category-name {
+        color: $main-font-color-light;
+        font-size: 24px;
+        margin-bottom: 30px;
+        @include media-small {
+          font-size: 20px;
+        }
       }
     }
   }

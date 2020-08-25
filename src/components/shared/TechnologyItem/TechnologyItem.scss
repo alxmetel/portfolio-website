@@ -1,21 +1,28 @@
 @import '../../../stylesheets/variables';
+@import '../../../stylesheets/media';
 
 .ant-dropdown-link {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  @include media-small {
+    margin-bottom: 20px;
+  }
   &:not(:last-child) {
     margin-right: 30px;
+    @include media-small {
+      margin-right: 20px;
+    }
   }
 }
 
 .tech-item {
   min-width: 200px;
-  min-height: 100px;
+  min-height: 80px;
   border: 1px $golden-color solid;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  padding: 5px 30px 5px 5px;
+  padding: 5px 30px 5px 12px;
   cursor: pointer;
   &:hover {
     border: 1px $golden-color-hover solid;
@@ -23,20 +30,71 @@
       color: $golden-color-hover;
     }
   }
+  @include media-small {
+    min-width: 0;
+    min-height: 50px;
+    padding: 5px 20px 5px 10px;
+  }
   .tech-image {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     margin-right: 20px;
+    @include media-small {
+      width: 40px;
+      height: 40px;
+    }
   }
   .tech-name {
     font-size: 20px;
     color: $golden-color;
+    @include media-small {
+      font-size: 18px;
+    }
   }
 }
 
 // Dropdown Menu
 .ant-dropdown-menu {
-  border-radius: 30px;
+  border-radius: 20px;
   top: 10px;
   overflow: hidden;
+  .dropdown-menu-head {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid $golden-color;
+    font-size: 18px;
+    color: $golden-color;
+    line-height: 1.4;
+    @include media-small {
+      font-size: 16px;
+    }
+  }
+  .ant-dropdown-menu-item {
+    padding: 16px 20px;
+    @include media-small {
+      padding: 12px 20px;
+    }
+    .dropdown-menu-item {
+      display: flex;
+      align-items: center;
+      .project-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 20px;
+        @include media-small {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .project-title {
+        font-size: 18px;
+        color: $main-font-color;
+        @include media-small {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }

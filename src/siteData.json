@@ -10,7 +10,8 @@
       "button_all_projects": "View All Projects"
     },
     "skills": {
-      "title": "My Skills"
+      "title": "My Skills",
+      "dropdown_menu_head": "Projects where it was used"
     }
   }
 }

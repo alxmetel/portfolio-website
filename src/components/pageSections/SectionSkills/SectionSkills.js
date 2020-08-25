@@ -13,11 +13,12 @@ const SectionSkills = props => {
     sortTechByCategory();
   }, []);
 
-  function sortTechByCategory() { // FIX!!!
+  function sortTechByCategory() {
     let sorted = {};
-    technologiesData.map(elem => {
+    technologiesData.forEach(elem => {
       if (sorted[elem.category] === undefined) {
         sorted[elem.category] = [];
+        sorted[elem.category].push(elem);
       } else {
         sorted[elem.category].push(elem);
       }
@@ -27,7 +28,7 @@ const SectionSkills = props => {
 
   function getProjectsByTechnology(techId) {
     let projects = [];
-    projectsData.map(elem => {
+    projectsData.forEach(elem => {
       if (elem.tech_stack !== undefined && elem.tech_stack.includes(techId)) {
         projects.push(elem);
       }
