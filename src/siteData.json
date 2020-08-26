@@ -12,6 +12,30 @@
     "skills": {
       "title": "My Skills",
       "dropdown_menu_head": "Projects where it was used"
+    },
+    "contacts": {
+      "title": "Hire Me",
+      "resume": {
+        "title": "PDF Resume",
+        "link": "#"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "link": "https://linkedin.com/in/ametelchenko"
+      },
+      "phone": {
+        "title": "647.410.5549",
+        "link": "+16474105549"
+      },
+      "email": {
+        "title": "alxmetel@gmail.com",
+        "link": "alxmetel@gmail.com"
+      },
+      "contact_form": {
+        "email": "Your e-mail",
+        "subject": "Subject of your message",
+        "message": "Your message"
+      }
     }
   }
 }

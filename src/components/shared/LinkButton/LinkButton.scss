@@ -12,9 +12,9 @@
   text-decoration: none;
   transition: all .1s ease-in-out;
   &:hover {
-    border: 1px $golden-color-hover solid;
+    border: 1px $golden-color-dark solid;
     span {
-      color: $golden-color-hover;
+      color: $golden-color-dark;
     }
   }
   span {

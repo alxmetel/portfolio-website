@@ -1,0 +1,34 @@
+@import '../../../stylesheets/variables';
+@import '../../../stylesheets/media';
+
+.section-contacts {
+  .container {
+    display: flex;
+    .info-block {
+      width: 50%;
+      .info-item-container {
+        display: flex;
+        font-size: 20px;
+        margin-bottom: 10px;
+        &:hover {
+          .info-item-icon {
+            color: $golden-color-dark;
+          }
+          .info-item-text {
+            color: $main-font-color-light;
+          }
+        }
+        .info-item-icon {
+          width: 40px;
+          color: $golden-color;
+        }
+        .info-item-text {
+          color: $main-font-color;
+        }
+      }
+    }
+    .form-block {
+      flex: 1;
+    }
+  }
+}
