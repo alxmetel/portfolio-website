@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf, faPhoneSquare, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import InputTextField from '../../shared/InputTextField/InputTextField';
+import InputTextAreaField from '../../shared/InputTextAreaField/InputTextAreaField';
 
 const SectionContacts = () => {
   return (
@@ -40,6 +41,11 @@ const SectionContacts = () => {
               <InputTextField
                 id="contact-form-subject"
                 label={siteData.home.contacts.contact_form.subject}
+              />
+              <InputTextAreaField
+                id="contact-form-message"
+                label={siteData.home.contacts.contact_form.message}
+                minRows="5"
               />
             </form>
           </div>
