@@ -32,9 +32,23 @@
         "link": "alxmetel@gmail.com"
       },
       "contact_form": {
-        "email": "Your e-mail",
-        "subject": "Subject of your message",
-        "message": "Your message"
+        "name": {
+          "label": "Your name",
+          "error_required": "It cannot be blank"
+        },
+        "email": {
+          "label": "Your e-mail",
+          "error_required": "It cannot be blank",
+          "error_is_email": "Your email looks wrong"
+        },
+        "subject": {
+          "label": "Subject of your message",
+          "error_required": "It cannot be blank"
+        },
+        "message": {
+          "label": "Your message",
+          "error_required": "It cannot be blank"
+        }
       }
     }
   }

@@ -1,9 +1,35 @@
 @import '../../../stylesheets/variables';
 @import '../../../stylesheets/media';
 
+@mixin labelBubbling() {
+  left: 30px;
+  font-size: 90%;
+  color: $golden-color-dark;
+  transform: translateY(-15px);
+  @include media-small {
+    left: 20px;
+    font-size: 80%;
+    transform: translateY(-10px);
+  }
+}
+
 .input-text-area-field-container {
   position: relative;
   margin-bottom: 20px;
+  .input-field-label {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    font-size: 20px;
+    color: $golden-color;
+    cursor: text;
+    transition: all .15s ease-in-out;
+    @include media-small {
+      left: 20px;
+      top: 20px;
+      font-size: 16px;
+    }
+  }
   .input-field {
     box-sizing: border-box;
     resize: none;
@@ -13,16 +39,17 @@
     width: 100%;
     background-color: transparent;
     border: 1px solid $golden-color;
-    border-radius: 40px;
+    border-radius: 36px;
     color: $main-font-color-light;
     font-size: 20px;
     caret-color: $golden-color;
-    padding: 8px 30px;
-    margin-bottom: 10px;
+    padding: 40px 30px 20px;
+    margin-bottom: 5px;
     transition: all .1s ease-in-out;
-    &::placeholder {
-      font-size: 20px;
-      color: $golden-color;
+    @include media-small {
+      border-radius: 30px;
+      font-size: 16px;
+      padding: 40px 20px 20px;
     }
     &:hover {
       border-color: $golden-color-dark;
@@ -31,12 +58,12 @@
       outline: none;
       border-color: $golden-color-dark;
     }
-
-    &:focus ~ .input-field-error { // REMOVE!!!
-      height: 40px;
-      opacity: 1;
+    &:focus ~ .input-field-label {
+      @include labelBubbling();
     }
   }
+
+  // Error
   .input-field-error {
     height: 0;
     opacity: 0;
@@ -44,8 +71,26 @@
     font-size: 16px;
     padding: 0 30px;
     transition: all .1s ease-out;
-    &.shown {
-      height: auto;
+    @include media-small {
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+
+  // Filled
+  &.filled {
+    .input-field-label {
+      @include labelBubbling();
+    }
+  }
+
+  // Invalid
+  &.invalid {
+    .input-field {
+      border: 1px solid $red;
+    }
+    .input-field-error {
+      height: 40px;
       opacity: 1;
     }
   }

@@ -4,31 +4,67 @@
 .section-contacts {
   .container {
     display: flex;
+    @include media-phone-land {
+      flex-direction: column;
+    }
+    @include media-small {
+      flex-direction: column;
+    }
+
+    // Info Block
     .info-block {
       width: 50%;
-      .info-item-container {
-        display: flex;
-        font-size: 20px;
-        margin-bottom: 10px;
-        &:hover {
+      @include media-tablet {
+        width: 40%;
+      }
+      @include media-phone-land {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      @include media-small {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .info-item-wrapper {
+        .info-item-link-container {
+          display: inline-flex;
+          font-size: 20px;
+          margin-bottom: 10px;
+          @include media-small {
+            font-size: 16px;
+          }
+          &:hover {
+            .info-item-icon {
+              color: $golden-color-dark;
+            }
+            .info-item-text {
+              color: $main-font-color-light;
+            }
+          }
           .info-item-icon {
-            color: $golden-color-dark;
+            width: 40px;
+            color: $golden-color;
+            @include media-small {
+              width: 30px;
+            }
           }
           .info-item-text {
-            color: $main-font-color-light;
+            color: $main-font-color;
           }
-        }
-        .info-item-icon {
-          width: 40px;
-          color: $golden-color;
-        }
-        .info-item-text {
-          color: $main-font-color;
         }
       }
     }
+
+    // Contact Form
     .form-block {
       flex: 1;
+      margin-bottom: 40px;
+      .button-container {
+        display: flex;
+        @include media-small {
+          justify-content: center;
+        }
+      }
     }
   }
 }
