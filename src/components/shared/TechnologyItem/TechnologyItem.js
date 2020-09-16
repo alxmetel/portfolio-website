@@ -2,6 +2,8 @@ import React from 'react';
 import './TechnologyItem.scss';
 import siteData from '../../../siteData.json';
 import { Menu, Dropdown } from 'antd';
+// import 'antd/lib/menu/style/css';
+// import 'antd/lib/dropdown/style/css';
 
 const TechnologyItem = props => {
   const { projectsData, technologiesSortedData } = props;

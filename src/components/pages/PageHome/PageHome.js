@@ -4,6 +4,7 @@ import SectionHeaderVideo from '../../pageSections/SectionHeaderVideo/SectionHea
 import SectionAbout from '../../pageSections/SectionAbout/SectionAbout';
 import SectionProjects from '../../pageSections/SectionProjects/SectionProjects';
 import SectionSkills from '../../pageSections/SectionSkills/SectionSkills';
+import SectionContacts from '../../pageSections/SectionContacts/SectionContacts';
 
 const PageHome = () => {
 
@@ -64,6 +65,7 @@ const PageHome = () => {
         <SectionAbout />
         {renderProjectsSection()}
         {renderSkillsSection()}
+        <SectionContacts />
       </section>
     </div>
   )

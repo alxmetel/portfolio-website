@@ -1,4 +1,5 @@
 @import './variables';
+@import './media';
 
 body {
   margin: 0;
@@ -28,7 +29,39 @@ body {
 .content-container {
   position: relative;
   max-width: $content-container-width;
-  // width: $content-container-width;
   width: 100%;
   padding: 0 20px;
+}
+
+// Button
+.button {
+  min-width: 150px;
+  min-height: 50px;
+  border: 1px $golden-color solid;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-decoration: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  &:hover {
+    border: 1px $golden-color-dark solid;
+    span {
+      color: $golden-color-dark;
+    }
+  }
+  span {
+    color: $golden-color;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: all .1s ease-in-out;
+    @include media-small {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
 }
