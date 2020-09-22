@@ -72,7 +72,7 @@ const SectionContacts = () => {
   }
 
   return (
-    <section className="page-section section-contacts">
+    <section id="contacts" className="page-section section-contacts">
       <div className="content-container">
         <SectionTitle content={siteData.home.contacts.title} />
         <div className="container">

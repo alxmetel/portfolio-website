@@ -9,6 +9,11 @@ body {
   * {
     box-sizing: border-box;
   }
+
+  // No Scroll
+  &.noscroll {
+    overflow: hidden;
+  }
   
   // Dark Mode
   .dark {
