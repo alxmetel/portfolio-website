@@ -59,7 +59,7 @@ const SectionProjects = props => {
   }  
 
   return (
-    <section className="page-section section-projects">
+    <section id="projects" className="page-section section-projects">
       <div className="content-container">
         <SectionTitle content={siteData.home.projects.title} />
         <div className="slider-container">

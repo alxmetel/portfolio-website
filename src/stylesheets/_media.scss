@@ -51,3 +51,10 @@
     @content;
   }
 }
+
+// Header
+@mixin media-header {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
