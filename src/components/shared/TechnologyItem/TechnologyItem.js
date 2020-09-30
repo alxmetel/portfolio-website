@@ -1,6 +1,7 @@
 import React from 'react';
 import './TechnologyItem.scss';
 import siteData from '../../../siteData.json';
+import { Link } from "react-router-dom";
 import { Menu, Dropdown } from 'antd';
 // import 'antd/lib/menu/style/css';
 // import 'antd/lib/dropdown/style/css';
@@ -12,10 +13,10 @@ const TechnologyItem = props => {
     projectsData.map((elem, i) => {
       return (
         <Menu.Item key={i}>
-          <a href="http://www.alipay.com/" className="dropdown-menu-item">
-            <img src={elem.image_small} className="project-image" alt={elem.title} />
+          <Link to={elem.path} className="dropdown-menu-item">
+            <img src={elem.bg_images.small} className="project-image" />
             <div className="project-title">{elem.title}</div>
-          </a>
+          </Link>
         </Menu.Item>
       )  
     })

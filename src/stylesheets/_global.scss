@@ -17,7 +17,7 @@ body {
   
   // Dark Mode
   .dark {
-    background: #000;
+    background: rgba(0, 0, 0, 1);
     color: $main-font-color;
   }
 }
@@ -38,34 +38,44 @@ body {
   padding: 0 20px;
 }
 
+.main-content {
+  background: rgba(0, 0, 0, 1);
+  padding-bottom: 70px;
+  @include media-small {
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+}
+
 // Button
 .button {
-  min-width: 150px;
-  min-height: 50px;
-  border: 1px $golden-color solid;
-  border-radius: 25px;
-  display: flex;
+  min-width: 100px;
+  min-height: 45px;
+  border: none;
+  border-radius: 30px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
   text-decoration: none;
-  background: transparent;
+  background: $golden-color;
+  color: $black-color;
   outline: none;
   cursor: pointer;
-  transition: all .1s ease-in-out;
+  transition: all .2s ease-out;
   &:hover {
-    border: 1px $golden-color-dark solid;
-    span {
-      color: $golden-color-dark;
-    }
+    background: $golden-color-dark;
+    color: $black-color;
   }
-  span {
-    color: $golden-color;
-    font-size: 24px;
+  @include media-small {
+    min-width: 100px;
+    min-height: 40px;
+  }
+  span, div {
+    font-size: 20px;
     text-transform: uppercase;
-    transition: all .1s ease-in-out;
     @include media-small {
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1;
     }
   }

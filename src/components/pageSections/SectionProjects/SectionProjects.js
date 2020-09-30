@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './SectionProjects.scss';
+import { connect } from 'react-redux';
 import SlickSlider from '../../shared/SlickSlider/SlickSlider';
 import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
@@ -8,14 +9,24 @@ import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
 const SectionProjects = props => {
-  const { data } = props;
+  const data = props.projectsData;
+  const [dataIsReady, setDataIsReady] = useState(false);
+
+  useEffect(() => {
+    if (Object.keys(data).length !== 0) {
+      setDataIsReady(true);
+    } else {
+      setDataIsReady(false);
+    }
+  }, [data])
 
   function renderProjectCards() {
     return sortArrayByValue(data, 'desc').map(elem => {
       return (
         <ProjectCard
           key={elem.id}
-          image={elem.image_small}
+          path={elem.path}
+          image={elem.bg_images.medium}
           title={elem.title}
           description={elem.description}
         />
@@ -50,12 +61,18 @@ const SectionProjects = props => {
       ]
     }
 
-    return (
-      <SlickSlider
-        settings={sliderSettings}
-        slides={renderProjectCards()}
-      />
-    )
+    if (dataIsReady) {
+      return (
+        <SlickSlider
+          settings={sliderSettings}
+          slides={renderProjectCards()}
+        />
+      )
+    } else {
+      return (
+        <div>Loading...</div> // Replace with Loader
+      )
+    }
   }  
 
   return (
@@ -76,4 +93,10 @@ const SectionProjects = props => {
   )
 }
 
-export default SectionProjects;
+const mapStateToProps = state => ({
+  projectsData: state.portfolioData.projectsData
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SectionProjects);
