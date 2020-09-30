@@ -6,10 +6,7 @@ const LinkButton = props => {
   const { path, title } = props;
 
   return (
-    <Link
-      to={path}
-      className="button"  
-    >
+    <Link to={path} className="button">
       <span>{title}</span>
     </Link>
   )

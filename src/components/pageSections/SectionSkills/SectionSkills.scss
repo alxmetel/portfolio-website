@@ -2,11 +2,15 @@
 @import '../../../stylesheets/media';
 
 .section-skills {
+  margin-bottom: 50px;
+  @include media-small {
+    margin-bottom: 30px;
+  }
   .skills-container {
     .tech-category-block {
-      margin-bottom: 60px;
+      margin-bottom: 30px;
       @include media-small {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       .tech-category-name {
         color: $main-font-color-light;
@@ -14,6 +18,7 @@
         margin-bottom: 30px;
         @include media-small {
           font-size: 20px;
+          margin-bottom: 20px;
         }
       }
     }

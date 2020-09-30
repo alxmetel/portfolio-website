@@ -35,7 +35,7 @@
           }
           &:hover {
             .info-item-icon {
-              color: $golden-color-dark;
+              color: $golden-color;
             }
             .info-item-text {
               color: $main-font-color-light;
@@ -43,13 +43,15 @@
           }
           .info-item-icon {
             width: 40px;
-            color: $golden-color;
+            color: $golden-color-dark;
+            transition: all .3s ease-in-out;
             @include media-small {
               width: 30px;
             }
           }
           .info-item-text {
             color: $main-font-color;
+            transition: all .3s ease-in-out;
           }
         }
       }
@@ -63,6 +65,9 @@
         display: flex;
         @include media-small {
           justify-content: center;
+        }
+        .button {
+          min-width: 150px;
         }
       }
     }

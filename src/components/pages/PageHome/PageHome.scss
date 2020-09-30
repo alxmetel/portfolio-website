@@ -2,18 +2,14 @@
 
 .page-home {
   .main-content {
-    margin-top: calc(700px - 10vw);
     clip-path: polygon(100% 0, 100% calc(100% - 100px), 0 100%, 0 10vw);
-    background: rgba(0, 0, 0, 1);
-    padding-bottom: 70px;
+    margin-top: calc(700px - 10vw);
     @include media-medium {
       margin-top: calc(500px - 10vw);
     }
     @include media-small {
-      margin-top: calc(500px - 10vw);
       clip-path: polygon(100% 0, 100% calc(100% - 60px), 0 100%, 0 10vw);
-      padding-bottom: 40px;
-      margin-bottom: 20px;
+      margin-top: calc(500px - 10vw);
     }
   }
 }

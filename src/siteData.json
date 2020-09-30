@@ -51,5 +51,9 @@
         }
       }
     }
+  },
+  "project_template": {
+    "link_button": "Link",
+    "github_link_button": "GitHub"
   }
 }

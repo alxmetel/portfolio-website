@@ -6,12 +6,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: $header-height;
+  height: 100px;
   background-color: rgba(0, 0, 0, .5);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   z-index: 2;
+  @include media-header {
+    height: 80px;
+  }
   .content-container {
     display: flex;
     justify-content: space-between;

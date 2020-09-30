@@ -16,13 +16,13 @@
 }
 
 .tech-item {
-  min-width: 200px;
-  min-height: 80px;
+  min-width: 150px;
+  min-height: 60px;
   border: 1px $golden-color solid;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  padding: 5px 30px 5px 12px;
+  padding: 5px 24px 5px 10px;
   cursor: pointer;
   &:hover {
     border: 1px $golden-color-dark solid;
@@ -32,16 +32,16 @@
   }
   @include media-small {
     min-width: 0;
-    min-height: 50px;
+    min-height: 40px;
     padding: 5px 20px 5px 10px;
   }
   .tech-image {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
     @include media-small {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
   }
   .tech-name {

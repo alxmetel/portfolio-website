@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './SectionSkills.scss';
+import { connect } from 'react-redux';
 import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import TechnologyItem from '../../shared/TechnologyItem/TechnologyItem';
 
 const SectionSkills = props => {
-  const { technologiesData, projectsData } = props;
+  const projectsData = props.projectsData;
+  const technologiesData = props.techData;
   
+  const [dataIsReady, setDataIsReady] = useState(false);
   const [sortedData, setSortedData] = useState(null);
   
   useEffect(() => {
-    sortTechByCategory();
-  }, []);
+    if (Object.keys(projectsData).length !== 0 && Object.keys(technologiesData).length !== 0) {
+      setDataIsReady(true);
+    } else {
+      setDataIsReady(false);
+    }
+  }, [projectsData, technologiesData]);
+
+  useEffect(() => {
+    if (dataIsReady) {
+      sortTechByCategory();
+    }
+  }, [dataIsReady]);
 
   function sortTechByCategory() {
     let sorted = {};
@@ -39,17 +52,17 @@ const SectionSkills = props => {
   function renderTechItems(arr) {
     return arr.map((elem, i) => {
       return (
-          <TechnologyItem
-            projectsData={getProjectsByTechnology(elem.id)}
-            technologiesSortedData={elem}
-            key={i}
-          />
-        )
+        <TechnologyItem
+          projectsData={getProjectsByTechnology(elem.id)}
+          technologiesSortedData={elem}
+          key={i}
+        />
+      )
     })
   }
 
   function renderStructuredTechList() {
-    if (sortedData !== null) {
+    if (dataIsReady && sortedData !== null) {
       return Object.keys(sortedData).map((category, i) => {
         return (
           <div className="tech-category-block" key={i}>
@@ -60,6 +73,10 @@ const SectionSkills = props => {
           </div>
         )
       })
+    } else {
+      return (
+        <div>Loading...</div> // Replace with Loader
+      )
     }
   }
 
@@ -75,4 +92,11 @@ const SectionSkills = props => {
   )
 }
 
-export default SectionSkills;
+const mapStateToProps = state => ({
+  projectsData: state.portfolioData.projectsData,
+  techData: state.portfolioData.technologiesData
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SectionSkills);

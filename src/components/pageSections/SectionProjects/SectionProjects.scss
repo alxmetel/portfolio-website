@@ -13,7 +13,9 @@
 
     // Section Title
     .section-title {
-      padding: 0 20px;
+      @include media-small {
+        padding: 0 20px;
+      }
     }
 
     // Slider Container
@@ -167,17 +169,10 @@
       width: 100%;
       padding: 0 20px;
       .button {
-        min-height: 60px;
         padding: 0 40px;
-        border-radius: 30px;
-        font-size: 24px;
         letter-spacing: 2px;
-        text-transform: uppercase;
         @include media-small {
-          min-height: 50px;
-          padding: 0 24px;
-          border-radius: 25px;
-          font-size: 16px;
+          padding: 0 30px;
           letter-spacing: 1px;
         }
       }
