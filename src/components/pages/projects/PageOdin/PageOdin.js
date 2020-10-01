@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
-// import siteData from '../../../../siteData.json';
 
-const PageJurliga = props => {
-  const projectId = 1;
+const PageOdin = props => {
+  const projectId = 6;
   const allProjectsData = props.projectsData;
   const technologiesData = props.techData;
 
@@ -54,4 +53,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageJurliga);
+export default connect(mapStateToProps, mapDispatchToProps)(PageOdin);
