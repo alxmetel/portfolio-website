@@ -45,6 +45,13 @@
   }
 }
 
+// Under Tablet
+@mixin media-under-tablet {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 // Medium
 @mixin media-medium {
   @media (min-width: 500px) and (max-width: 1199px) {
