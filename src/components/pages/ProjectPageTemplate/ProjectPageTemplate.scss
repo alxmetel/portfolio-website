@@ -195,6 +195,9 @@
       // Body Section
       .body-section {
         margin-bottom: 60px;
+        @include media-desktop {
+          min-height: 400px;
+        }
         @include media-small {
           margin-bottom: 40px;
         }
