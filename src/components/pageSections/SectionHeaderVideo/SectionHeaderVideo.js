@@ -5,7 +5,7 @@ import headerVideo from '../../../assets/header-video-test.mp4';
 const SectionHeaderVideo = () => {
   return (
     <section id="header-video" className="header-video-section">
-      <video autoPlay playsInline muted>
+      <video autoPlay playsInline muted loop>
         <source src={headerVideo} type="video/mp4"></source>
       </video>
       <div className="header-video-overlay"></div>

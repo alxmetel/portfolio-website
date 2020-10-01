@@ -3,22 +3,52 @@
 
 .section-skills {
   margin-bottom: 50px;
-  @include media-small {
-    margin-bottom: 30px;
-  }
+
+  // Card container
   .skills-container {
-    .tech-category-block {
-      margin-bottom: 30px;
-      @include media-small {
-        margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 50%; // Prevents children overflowing
+    grid-gap: 30px;
+    @include media-tablet {
+      grid-gap: 20px;
+    }
+    @include media-under-tablet {
+      grid-template-columns: auto;
+    }
+
+    // Card
+    .tech-category-card {
+      background: $gray-color;
+      border-radius: 20px;
+      overflow: hidden;
+
+      // Card header
+      .tech-category-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $gray-color-dark;
+        border-bottom: 1px solid $main-font-color-light;
+        min-height: 70px;
+        .tech-category-name {
+          color: $main-font-color-light;
+          font-size: 22px;
+          text-transform: uppercase;
+          margin: 0;
+          @include media-small {
+            font-size: 19px;
+          }
+        }
       }
-      .tech-category-name {
-        color: $main-font-color-light;
-        font-size: 24px;
-        margin-bottom: 30px;
-        @include media-small {
-          font-size: 20px;
-          margin-bottom: 20px;
+
+      // Items container
+      .tech-items-container {
+        padding: 30px 30px 10px;
+        @include media-tablet {
+          padding: 20px 20px 0;
+        }
+        @include media-under-tablet {
+          padding: 20px 20px 0;
         }
       }
     }

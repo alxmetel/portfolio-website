@@ -65,8 +65,10 @@ const SectionSkills = props => {
     if (dataIsReady && sortedData !== null) {
       return Object.keys(sortedData).map((category, i) => {
         return (
-          <div className="tech-category-block" key={i}>
-            <h3 className="tech-category-name">{category}</h3>
+          <div className="tech-category-card" key={i}>
+            <header className="tech-category-header">
+              <h3 className="tech-category-name">{category}</h3>
+            </header>
             <div className="tech-items-container">
               {renderTechItems(sortedData[category])}
             </div>
