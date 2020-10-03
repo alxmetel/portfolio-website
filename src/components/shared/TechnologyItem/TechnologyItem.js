@@ -33,7 +33,9 @@ const TechnologyItem = props => {
     <Dropdown overlay={dropdownMenu} trigger={['click']}>
       <div className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <div className="tech-item">
-            <img src={technologiesSortedData.image} className="tech-image" alt={technologiesSortedData.name} />
+            <div className="image-container">
+              <img src={technologiesSortedData.image} className="tech-image" />
+            </div>
             <div className="tech-name">{technologiesSortedData.name}</div>
         </div>
       </div>
