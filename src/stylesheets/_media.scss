@@ -28,9 +28,16 @@
   }
 }
 
-// iPad Pro 12", Laptops, Desktops
+// Laptops, Desktops
 @mixin media-desktop {
   @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// iPad Pro 12"
+@mixin media-ipad-pro {
+  @media (min-width: 900px) and (max-width: 1199px) and (orientation: portrait) {
     @content;
   }
 }
@@ -61,7 +68,7 @@
 
 // Header
 @mixin media-header {
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     @content;
   }
 }

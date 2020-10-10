@@ -42,10 +42,11 @@ const Header = () => {
       <div className="nav-block">
         <nav>
           <ul>
-            <li><NavLink to='/#about'     scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>About Me</NavLink></li>
-            <li><NavLink to='/#projects'  scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Projects</NavLink></li>
-            <li><NavLink to='/#skills'    scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>My Skills</NavLink></li>
-            <li><NavLink to='/#contacts'  scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Hire Me</NavLink></li>
+            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>Home</NavLink></li>
+            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>About Me</NavLink></li>
+            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Projects</NavLink></li>
+            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>My Skills</NavLink></li>
+            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Hire Me</NavLink></li>
           </ul>
         </nav>
       </div>
@@ -75,7 +76,7 @@ const Header = () => {
       <header className="site-header">
         <div className="content-container">
           <div className="logo-block">
-            <NavLink to='/#header-video' scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>alX</NavLink>
+            <a href='/'>alX</a>
           </div>
           {renderNavigationBlock()}
           {renderHamburgerMenu()}

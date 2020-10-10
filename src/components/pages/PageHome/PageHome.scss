@@ -5,11 +5,14 @@
     clip-path: polygon(100% 0, 100% calc(100% - 100px), 0 100%, 0 10vw);
     margin-top: calc(700px - 10vw);
     @include media-medium {
-      margin-top: calc(500px - 10vw);
+      margin-top: calc(450px - 10vw);
+    }
+    @include media-ipad-pro {
+      margin-top: calc(550px - 10vw);
     }
     @include media-small {
       clip-path: polygon(100% 0, 100% calc(100% - 60px), 0 100%, 0 10vw);
-      margin-top: calc(500px - 10vw);
+      margin-top: calc(300px - 10vw);
     }
   }
 }

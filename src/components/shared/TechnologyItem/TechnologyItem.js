@@ -14,7 +14,7 @@ const TechnologyItem = props => {
       return (
         <Menu.Item key={i}>
           <Link to={elem.path} className="dropdown-menu-item">
-            <img src={elem.bg_images.small} className="project-image" />
+            <img src={elem.bg_images.square_sm} className="project-image" />
             <div className="project-title">{elem.title}</div>
           </Link>
         </Menu.Item>

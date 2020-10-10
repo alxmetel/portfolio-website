@@ -26,7 +26,7 @@ const SectionProjects = props => {
         <ProjectCard
           key={elem.id}
           path={elem.path}
-          image={elem.bg_images.medium}
+          image={elem.bg_images.square_lg}
           title={elem.title}
           description={elem.description}
         />
