@@ -3,19 +3,35 @@
 .header-video-section {
   position: fixed;
   height: 700px;
+  width: 100vw;
+  overflow: hidden;
   @include media-medium {
     height: 500px;
   }
+  @include media-ipad-pro {
+    height: 600px;
+  }
   @include media-small {
-    height: 500px;
+    height: 300px;
   }
   video {
-    height: 100%;
+    width: 100%;
+    @include media-medium {
+      width: auto;
+      height: 100%;
+    }
+    @include media-ipad-pro {
+      width: auto;
+      height: 100%;
+    }
+    @include media-small {
+      width: auto;
+      height: 100%;
+    }
   }
   .header-video-overlay {
     position: absolute;
-    background: #232222;
-    opacity: 0.65;
+    background: rgba(0, 0, 0, .3);
     top: 0;
     left: 0;
     right: 0;

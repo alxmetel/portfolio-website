@@ -74,7 +74,7 @@ const ProjectPageTemplate = props => {
         <section id="header-image-section">
           <div
             className="image-container"
-            style={{ backgroundImage: `url(${projectData.bg_images.large})` }}  
+            style={{ backgroundImage: `url(${projectData.bg_images.wide})` }}  
           ></div>
           <div className="overlay"></div>
           <div className="title-block">
