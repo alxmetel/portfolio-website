@@ -10,12 +10,14 @@
 .tech-item {
   min-width: 150px;
   min-height: 60px;
-  border: 1px $golden-color solid;
+  background: $gray-color-dark;
+  border: 1px transparent solid;
   border-radius: 50px;
   display: flex;
   align-items: center;
   padding: 5px 24px 5px 15px;
   cursor: pointer;
+  transition: all .2s ease-out;
   &:hover {
     border: 1px $golden-color-dark solid;
     .tech-name {
@@ -46,6 +48,7 @@
   .tech-name {
     font-size: 20px;
     color: $golden-color;
+    transition: all .2s ease-out;
     @include media-small {
       font-size: 18px;
     }

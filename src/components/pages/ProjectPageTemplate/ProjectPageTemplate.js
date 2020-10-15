@@ -6,6 +6,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub} from '@fortawesome/free-brands-svg-icons';
 import TechnologyItem from '../../shared/TechnologyItem/TechnologyItem';
 import ProjectGallery from '../../pageSections/ProjectGallery/ProjectGallery';
+import SectionProjects from '../../pageSections/SectionProjects/SectionProjects';
 
 const ProjectPageTemplate = props => {
   const { projectData, technologiesData, allProjectsData } = props;
@@ -100,7 +101,7 @@ const ProjectPageTemplate = props => {
             </section>
 
             <section className="body-section">
-              <img id="body-img-1" src={projectData.body_images.img1} />
+              {/* <img id="body-img-1" src={projectData.body_images.img1} /> */}
               <p>{projectData.body_text.p1}</p>
               <p>{projectData.body_text.p2}</p>
               <p>{projectData.body_text.p3}</p>
@@ -109,6 +110,8 @@ const ProjectPageTemplate = props => {
             <section className="gallery-section">
               <ProjectGallery imagesData={galleryImagesData} />
             </section>
+
+            <SectionProjects title={siteData.project_template.other_projects_title} />
           </div>
         </div>
       </div>
