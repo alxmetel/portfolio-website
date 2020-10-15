@@ -43,10 +43,10 @@ const Header = () => {
         <nav>
           <ul>
             <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>Home</NavLink></li>
-            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>About Me</NavLink></li>
-            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Projects</NavLink></li>
-            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>My Skills</NavLink></li>
-            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, 100)} onClick={closeMenu}>Hire Me</NavLink></li>
+            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, -630)} onClick={closeMenu}>About Me</NavLink></li>
+            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>Projects</NavLink></li>
+            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>My Skills</NavLink></li>
+            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>Hire Me</NavLink></li>
           </ul>
         </nav>
       </div>

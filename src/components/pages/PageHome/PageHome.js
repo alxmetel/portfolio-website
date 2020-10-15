@@ -1,5 +1,6 @@
 import React from 'react';
 import './PageHome.scss';
+import siteData from '../../../siteData.json';
 import SectionHeaderVideo from '../../pageSections/SectionHeaderVideo/SectionHeaderVideo';
 import SectionAbout from '../../pageSections/SectionAbout/SectionAbout';
 import SectionProjects from '../../pageSections/SectionProjects/SectionProjects';
@@ -12,7 +13,7 @@ const PageHome = () => {
       <SectionHeaderVideo />
       <section className="main-content">
         <SectionAbout />
-        <SectionProjects />
+        <SectionProjects title={siteData.home.projects.title} />
         <SectionSkills />
         <SectionContacts />
       </section>

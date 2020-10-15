@@ -54,6 +54,7 @@
   },
   "project_template": {
     "link_button": "Link",
-    "github_link_button": "GitHub"
+    "github_link_button": "GitHub",
+    "other_projects_title": "My Other Projects"
   }
 }

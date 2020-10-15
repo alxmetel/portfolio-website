@@ -9,6 +9,8 @@ import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
 const SectionProjects = props => {
+  const { title } = props;
+
   const data = props.projectsData;
   const [dataIsReady, setDataIsReady] = useState(false);
 
@@ -78,7 +80,7 @@ const SectionProjects = props => {
   return (
     <section id="projects" className="page-section section-projects">
       <div className="content-container">
-        <SectionTitle content={siteData.home.projects.title} />
+        <SectionTitle content={title} />
         <div className="slider-container">
           {buildSlider()}
         </div>
