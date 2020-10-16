@@ -1,5 +1,7 @@
 import React from 'react';
 import './ProjectPageTemplate.scss';
+// import { Parallax, Background } from 'react-parallax';
+import { ParallaxBanner } from 'react-scroll-parallax';
 import siteData from '../../../siteData.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +9,8 @@ import { faGithub} from '@fortawesome/free-brands-svg-icons';
 import TechnologyItem from '../../shared/TechnologyItem/TechnologyItem';
 import ProjectGallery from '../../pageSections/ProjectGallery/ProjectGallery';
 import SectionProjects from '../../pageSections/SectionProjects/SectionProjects';
+
+import image from "../../../assets/banner.jpg";
 
 const ProjectPageTemplate = props => {
   const { projectData, technologiesData, allProjectsData } = props;
@@ -33,6 +37,47 @@ const ProjectPageTemplate = props => {
       }
     });
     return projects;
+  }
+
+  function renderParallaxImage() {
+    return (
+      <ParallaxBanner
+        className="header-image"
+        // y={[-20, 20]}
+        // offsetYMax={70}
+        // offsetYMin={-70}
+        // z={[-10, 10]}
+        // offsetYMin={-100}
+        // offsetYMax={100}
+        layers={[
+          {
+            // image: projectData.bg_images.wide,
+            image: image,
+            amount: 0.7,
+          }
+        ]}
+        style={{
+          height: '500px',
+        }}
+      >
+        {/* <img src={projectData.bg_images.wide} /> */}
+        {/* <img src={image} /> */}
+        <div className="overlay"></div>
+        <div className="title-block">
+          <h1>{projectData.title}</h1>
+        </div>
+      </ParallaxBanner>
+      // <Parallax
+      //       // blur={10}
+      //       bgImage={require('../../../assets/test-head-image.jpg')}
+      //       // bgImageAlt="the cat"
+      //       strength={500}
+      //   >
+      //   Put some text content here - even an empty div with fixed dimensions to have a height
+      //   for the parallax.
+      //       <div style={{ height: '500px' }} />
+      //   </Parallax>
+    )
   }
 
   function renderLinkButton() {
@@ -77,6 +122,7 @@ const ProjectPageTemplate = props => {
             className="image-container"
             style={{ backgroundImage: `url(${projectData.bg_images.wide})` }}  
           ></div>
+          {/* {renderParallaxImage()} */}
           <div className="overlay"></div>
           <div className="title-block">
             <h1>{projectData.title}</h1>
