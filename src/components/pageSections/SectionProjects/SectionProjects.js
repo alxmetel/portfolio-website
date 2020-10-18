@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './SectionProjects.scss';
 import { connect } from 'react-redux';
 import SlickSlider from '../../shared/SlickSlider/SlickSlider';
-import siteData from '../../../siteData.json';
+// import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import ProjectCard from '../../shared/ProjectCard/ProjectCard';
-import LinkButton from '../../shared/LinkButton/LinkButton';
+// import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
 const SectionProjects = props => {
@@ -84,12 +84,14 @@ const SectionProjects = props => {
         <div className="slider-container">
           {buildSlider()}
         </div>
-        <div className="button-container">
+
+        {/* All Projects Button */}
+        {/* <div className="button-container">
           <LinkButton
             path="/projects"
             title={siteData.home.projects.button_all_projects}
           />
-        </div>
+        </div> */}
       </div>
     </section>
   )

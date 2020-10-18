@@ -30,7 +30,11 @@ const TechnologyItem = props => {
   );
 
   return (
-    <Dropdown overlay={dropdownMenu} trigger={['click']}>
+    <Dropdown
+      overlay={dropdownMenu}
+      trigger={['click']}
+      getPopupContainer={trigger => trigger.parentElement} // Fix the bug with dropdown menu scrolling with the page when parent is 100vh
+    >
       <div className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <div className="tech-item">
             <div className="image-container">

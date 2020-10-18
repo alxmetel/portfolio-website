@@ -70,7 +70,7 @@ const ProjectPageTemplate = props => {
   }
 
   return (
-    <div className="project-page">
+    <div className="page-content page-project">
       <div className="page-container">
         <section id="header-image-section">
           <div

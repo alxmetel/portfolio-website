@@ -8,13 +8,20 @@
     @include media-medium {
       padding-top: 100px;
     }
+    @include media-ipad-pro {
+      padding-top: 130px;
+    }
     @include media-small {
       padding-top: 60px;
     }
+
+    // Title
     .section-title {
       position: relative;
       z-index: 1;
     }
+
+    // Text Block
     .text-block {
       position: relative;
       width: 70%;
@@ -32,6 +39,8 @@
         line-height: 1.5;
       }
     }
+
+    // Photo Block
     .photo-block {
       position: absolute;
       width: 50%;
@@ -47,10 +56,13 @@
         right: 0;
         background-position: top 40% right;
       }
+      @include media-ipad-pro {
+        background-position: top 60% right;
+      }
       @include media-small {
         width: 100%;
         right: 0;
-        background-position: top right;
+        background-position: top 40% right;
       }
     }
     .overlay {
