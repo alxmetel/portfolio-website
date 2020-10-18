@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 import { connect } from 'react-redux';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import {
   storeProjectsData,
   storeTechData
@@ -43,15 +42,13 @@ const App = props => {
   }
 
   return (
-    <ParallaxProvider>
-      <BrowserRouter>
-        <div className="App dark">
-          <Header />
-          <Main />
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </ParallaxProvider>
+    <BrowserRouter>
+      <div className="App dark">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
