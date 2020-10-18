@@ -42,6 +42,7 @@ body {
   background: rgba(0, 0, 0, 1);
   padding-bottom: 70px;
   // will-change: scroll-position, contents, transform;
+  overflow: visible;
   @include media-small {
     padding-bottom: 40px;
     margin-bottom: 20px;

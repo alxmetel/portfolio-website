@@ -13,6 +13,9 @@
 
     // Section Title
     .section-title {
+      @include media-medium {
+        padding: 0 20px;
+      }
       @include media-small {
         padding: 0 20px;
       }
@@ -20,9 +23,9 @@
 
     // Slider Container
     .slider-container {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       @include media-small {
-        margin-bottom: 80px;
+        margin-bottom: 30px;
       }
     
       // Slick Arrows
@@ -168,7 +171,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      padding: 0 20px;
+      padding: 50px 20px 0;
       .button {
         padding: 0 40px;
         letter-spacing: 2px;

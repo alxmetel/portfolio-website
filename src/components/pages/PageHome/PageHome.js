@@ -10,13 +10,15 @@ import SectionContacts from '../../pageSections/SectionContacts/SectionContacts'
 const PageHome = () => {
   return (
     <div className="page-content page-home">
-      <SectionHeaderVideo />
-      <section className="main-content">
-        <SectionAbout />
-        <SectionProjects title={siteData.home.projects.title} />
-        <SectionSkills />
-        <SectionContacts />
-      </section>
+      <div className="page-container">
+        <SectionHeaderVideo />
+        <section className="main-content">
+          <SectionAbout />
+          <SectionProjects title={siteData.home.projects.title} />
+          <SectionSkills />
+          <SectionContacts />
+        </section>
+      </div>
     </div>
   )
 }
