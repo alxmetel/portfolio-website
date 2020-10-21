@@ -29,6 +29,7 @@
       @include media-small {
         height: 350px;
       }
+
       .image-container {
         background-size: cover;
         background-position: center;
@@ -42,7 +43,7 @@
         transform: translateZ(-100px) translateY(-98%) scale(2); // Parallax
         @include media-medium {
           height: 130%;
-          transform: translateZ(-100px) translateY(-130%) scale(2);
+          transform: translateZ(-100px) translateY(-100%) scale(2);
         }
         @include media-ipad-pro {
           height: 150%;
@@ -67,12 +68,13 @@
           rgba(0,0,0,.1) 80%,
           rgba(0,0,0,0) 100%
         );
-        @include media-small {
+        @include media-under-tablet {
           background-image: linear-gradient(
             to top,
             rgba(0,0,0,.6) 0%,
             rgba(0,0,0,.3) 50%,
-            rgba(0,0,0,.1) 60%,
+            rgba(0,0,0,.2) 60%,
+            rgba(0,0,0,.1) 70%,
             rgba(0,0,0,0) 80%,
             rgba(0,0,0,0) 100%
           );
@@ -88,7 +90,7 @@
           width: 60%;
           padding: 0 30px 30px 0;
         }
-        @include media-small {
+        @include media-under-tablet {
           justify-content: center;
           width: 100%;
           padding: 30px 20px;
@@ -232,14 +234,21 @@
 
       // Gallery Section
       .gallery-section {
-        margin-bottom: 80px;
+        margin-bottom: 30px;
         @include media-medium {
-          margin-bottom: 40px;
+          margin-bottom: 20px;
         }
         @include media-small {
-          margin-bottom: 40px;
+          margin-bottom: 20px;
         }
       }
     }
   }
+}
+
+// Fix the bug with fullscreen display on Safari
+*:-webkit-full-screen-ancestor > #site-header,
+*:-webkit-full-screen-ancestor > #site-footer,
+*:-webkit-full-screen-ancestor > #header-image-section {
+  display: none !important;
 }

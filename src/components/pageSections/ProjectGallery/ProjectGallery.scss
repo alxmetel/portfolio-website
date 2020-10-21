@@ -1,63 +1,181 @@
-@import "~react-image-gallery/styles/scss/image-gallery.scss";
 @import '../../../stylesheets/variables';
 @import '../../../stylesheets/media';
 
-.image-gallery {
-  .image-gallery-slide-wrapper {
-    // @mixin media-desktop {
-    //   min-height: 696px;
-    // }
-    .image-gallery-slide {
-      
-        // Description
-        .image-gallery-description {
-          bottom: 0;
-          padding: 20px 70px 20px 30px;
-          background: rgba(0, 0, 0, 0.6);
-          text-align: left;
-          font-size: 18px;
-          line-height: 1.3;
-          color: $main-font-color-light;
-          @include media-medium {
-            padding: 20px 60px 20px 20px;
-          }
+.sliders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Thumbnails Slider
+  .thumbnails-slider {
+    width: calc(100% - 100px);
+    margin-bottom: 10px;
+    .slick-list {
+      .slick-slide {
+        padding: 7px;
+        border: 3px solid transparent;
+        cursor: pointer;
+        &.slick-current {
+          border-color: $golden-color;
+          border-radius: 10px;
           @include media-small {
-            display: block;
-            position: relative;
-            bottom: auto;
-            background: $gray-color;
-            padding: 20px 20px 40px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: $main-font-color;
+            border-width: 2px;
           }
         }
-    }
-    
-  }
-
-  // Thumbnails
-  .image-gallery-thumbnails-container {
-    cursor: auto;
-    .image-gallery-thumbnail {
-      transition: border .1s ease-out;
-      cursor: pointer;
-      &.active {
-        border-color: $golden-color-dark;
-      }
-      &:hover {
-        border-color: $golden-color;
       }
     }
+
+    // Slick Arrows
+    .slick-arrow {
+      &:before {
+        color: $golden-color;
+      }
+      &.slick-prev {
+        left: -30px;
+        @include media-medium {
+          left: -40px;
+        }
+        @include media-small {
+          left: -40px;
+        }
+      }
+      &.slick-next {
+        right: -30px;
+        @include media-medium {
+          right: -35px;
+        }
+        @include media-small {
+          right: -35px;
+        }
+      }
+    }
   }
 
-  // Buttons
-  button.image-gallery-icon {
-    &:focus {
-      outline: none;
+  // Images Slider
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+
+    .images-slider {
+      .slick-slide {
+        padding: 0 5px;
+      }
+  
+      // Slick Arrows
+      .slick-arrow {
+        transform: initial;
+        top: 0;
+        height: 370px;
+        width: 30%;
+        z-index: 1;
+        &:before {
+          content: '';
+        }
+        &.slick-prev {
+          cursor: url('../../../assets/slider-arrow-prev.png'), auto;
+        }
+        &.slick-next {
+          cursor: url('../../../assets/slider-arrow-next.png'), auto;
+        }
+        @include media-medium {
+          width: 15%;
+          height: 40vw;
+        }
+      }
     }
-    .image-gallery-svg {
+
+    // Slide Counter
+    .slide-counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 20px;
+      right: calc(10% + 20px);
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+      width: 80px;
+      min-height: 30px;
+      border-radius: 30px;
+      padding: 0 10px;
+      font-size: 14px;
       color: $golden-color;
+      z-index: 1;
+      @include media-medium {
+        right: 20px;
+      }
+      @include media-small {
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        padding: 0 5px;
+        min-height: 22px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+// Slide
+.slide-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  & > * {
+    width: 80%;
+    @include media-medium {
+      width: 100%;
+    }
+    @include media-small {
+      width: 100%;
+    }
+  }
+
+  // Video
+  video {
+    outline: none;
+    margin-bottom: 5px;
+    @include media-small {
+      margin-bottom: 0;
+    }
+  }
+
+  // Video
+  img {
+    display: inline-block;
+    margin-bottom: 5px;
+    @include media-small {
+      margin-bottom: 0;
+    }
+  }
+
+  // Description
+  .image-description {
+    display: inline-block;
+    background: $gray-color;
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    text-align: left;
+    @include media-small {
+      font-size: 14px;
+      padding: 10px 20px 20px;
+    }
+  }
+
+  // Button
+  .button-container {
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    @include media-small {
+      display: none;
+    }
+    .button {
+      min-height: 35px;
+      span {
+        font-size: 14px;
+      }
     }
   }
 }
