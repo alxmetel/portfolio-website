@@ -55,6 +55,10 @@
   "project_template": {
     "link_button": "Link",
     "github_link_button": "GitHub",
-    "other_projects_title": "My Other Projects"
+    "other_projects_title": "My Other Projects",
+    "fullscreen_button": {
+      "activate_fullscreen": "Full screen",
+      "deactivate_fullscreen": "Exit full screen"
+    }
   }
 }

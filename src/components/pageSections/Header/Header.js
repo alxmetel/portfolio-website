@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="site-header">
+      <header id="site-header">
         <div className="content-container">
           <div className="logo-block">
             <a href='/'>alX</a>

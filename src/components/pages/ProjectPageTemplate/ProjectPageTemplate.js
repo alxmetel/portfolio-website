@@ -11,7 +11,7 @@ import SectionProjects from '../../pageSections/SectionProjects/SectionProjects'
 const ProjectPageTemplate = props => {
   const { projectData, technologiesData, allProjectsData } = props;
 
-  const galleryImagesData = projectData.gallery_images;
+  const galleryImagesData = projectData.gallery;
 
   function getTechnologies() {
     let technologies = [];
@@ -108,7 +108,7 @@ const ProjectPageTemplate = props => {
             </section>
 
             <section className="gallery-section">
-              <ProjectGallery imagesData={galleryImagesData} />
+              <ProjectGallery galleryData={galleryImagesData} />
             </section>
 
             <SectionProjects title={siteData.project_template.other_projects_title} />

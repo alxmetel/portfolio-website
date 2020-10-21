@@ -7,7 +7,7 @@ import { faFilePdf, faPhoneSquare, faEnvelope } from '@fortawesome/free-solid-sv
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import InputTextField from '../../shared/InputTextField/InputTextField';
 import InputTextAreaField from '../../shared/InputTextAreaField/InputTextAreaField';
-import SubmitButton from '../../shared/SubmitButton/SubmitButton';
+import Button from '../../shared/Button/Button';
 
 const SectionContacts = () => {
 
@@ -153,7 +153,8 @@ const SectionContacts = () => {
                 validationErrors={{ isRequired: siteData.home.contacts.contact_form.message.error_required }}
               />
               <div className="button-container">
-                <SubmitButton
+                <Button
+                  type="submit"
                   title="Send"
                   onClick={e => handleSubmit(e)}
                 />

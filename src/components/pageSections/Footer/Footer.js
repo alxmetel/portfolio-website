@@ -3,7 +3,7 @@ import './Footer.scss'
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
+    <footer id="site-footer">
       <div className="footer-text">© Made by Alex Metelchenko</div>
     </footer>
   )
