@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
-const PagePortfolio = props => {
-  const projectId = 7;
+const PageCOC = props => {
+  const projectId = 5;
   const allProjectsData = props.projectsData;
   const technologiesData = props.techData;
 
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(PagePortfolio);
+export default connect(mapStateToProps, mapDispatchToProps)(PageCOC);
