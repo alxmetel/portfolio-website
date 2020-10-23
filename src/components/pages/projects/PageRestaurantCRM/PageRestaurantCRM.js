@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
 const PageRestaurantCRM = props => {
-  const projectId = 5;
+  const projectId = 6;
   const allProjectsData = props.projectsData;
   const technologiesData = props.techData;
 
