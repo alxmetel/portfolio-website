@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../../pages/PageHome/PageHome';
 import PageIndexProjects from '../../pages/PageIndexProjects/PageIndexProjects';
 
-import PageScientificJournal from '../../pages/projects/PageScientificJournal/PageScientificJournal';
 import PageLegalNews from '../../pages/projects/PageLegalNews/PageLegalNews';
 import PageAccountingNews from '../../pages/projects/PageAccountingNews/PageAccountingNews';
 import PageBusinessNews from '../../pages/projects/PageBusinessNews/PageBusinessNews';
@@ -19,7 +18,6 @@ const Main = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/projects' component={PageIndexProjects} />
-        <Route exact path='/projects/scientific-journal-website' component={PageScientificJournal} />
         <Route exact path='/projects/legal-news-website' component={PageLegalNews} />
         <Route exact path='/projects/accounting-news-website' component={PageAccountingNews} />
         <Route exact path='/projects/business-news-website' component={PageBusinessNews} />

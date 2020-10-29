@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
 const PageAccountingNews = props => {
-  const projectId = 2;
+  const projectId = 1;
   const allProjectsData = props.projectsData;
   const technologiesData = props.techData;
 
