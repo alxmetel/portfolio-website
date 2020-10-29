@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
 const PageLawCatalogue = props => {
-  const projectId = 4;
+  const projectId = 3;
   const allProjectsData = props.projectsData;
   const technologiesData = props.techData;
 

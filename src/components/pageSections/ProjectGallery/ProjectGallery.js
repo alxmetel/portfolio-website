@@ -61,10 +61,6 @@ const ProjectGallery = props => {
     });
   }
 
-  function setNumberOfThumbnails(maxSlides) {
-    return numberOfSlides < maxSlides ? numberOfSlides : maxSlides;
-  }
-
   function handleBeforeIndexChange(oldIndex, newIndex) {
     if (newIndex < numberOfSlides + 1) {
       const oldSlideVideoElem = document.querySelector(`.images-slider .slick-slide[data-index="${oldIndex}"] video`);
@@ -152,7 +148,7 @@ const ProjectGallery = props => {
     className: "thumbnails-slider",
     asNavFor: slides,
     ref: slider => thumbnailsCarousel = slider,
-    slidesToShow: setNumberOfThumbnails(6),
+    slidesToShow: 6,
     swipeToSlide: true,
     focusOnSelect: true,
     infinite: false,
@@ -160,13 +156,13 @@ const ProjectGallery = props => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: setNumberOfThumbnails(4),
+          slidesToShow: 4,
         }
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: setNumberOfThumbnails(3),
+          slidesToShow: 3,
         }
       }
     ]
