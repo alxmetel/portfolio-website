@@ -37,6 +37,7 @@ const PageLawCatalogue = props => {
         projectData={projectData}
         technologiesData={technologiesData}
         allProjectsData={allProjectsData}
+        currentProjectId={projectId}
       />
     )
   } else {

@@ -1,3 +1,13 @@
+// Format Date
+export function formatDate(strDate) {
+  const date = new Date(strDate);
+  const options = {
+    month: 'long',
+    year: 'numeric'
+  }
+  return new Intl.DateTimeFormat('en-US', options).format(date);
+}
+
 // Sorting an array by the value of ID 
 export function sortArrayByValue(arr, sortDirection) {
   function compare(a, b) {

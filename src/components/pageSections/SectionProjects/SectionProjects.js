@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './SectionProjects.scss';
 import { connect } from 'react-redux';
 import SlickSlider from '../../shared/SlickSlider/SlickSlider';
-// import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import ProjectCard from '../../shared/ProjectCard/ProjectCard';
-// import LinkButton from '../../shared/LinkButton/LinkButton';
 import { sortArrayByValue } from '../../../utilities/utilityFunctions';
 
 const SectionProjects = props => {
-  const { title } = props;
+  const { title, currentProjectId } = props;
 
   const data = props.projectsData;
   const [dataIsReady, setDataIsReady] = useState(false);
@@ -31,6 +29,7 @@ const SectionProjects = props => {
           image={elem.bg_images.square_lg}
           title={elem.title}
           description={elem.description}
+          date={elem.date}
         />
       )
     })
@@ -41,6 +40,7 @@ const SectionProjects = props => {
       centerMode: true,
       infinite: true,
       slidesToShow: 3,
+      initialSlide: currentProjectId ? data.length - currentProjectId : 0,
       speed: 500,
       dots: true,
       responsive: [
