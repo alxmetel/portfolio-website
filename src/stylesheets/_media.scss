@@ -66,9 +66,16 @@
   }
 }
 
-// Header
+// For Header
 @mixin media-header {
   @media (max-width: 750px) {
+    @content;
+  }
+}
+
+// For Spec Section
+@mixin media-spec-block {
+  @media (max-width: 1023px) {
     @content;
   }
 }

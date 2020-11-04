@@ -14,7 +14,10 @@ const PageHome = () => {
         <SectionHeaderVideo />
         <section className="main-content">
           <SectionAbout />
-          <SectionProjects title={siteData.home.projects.title} />
+          <SectionProjects
+            title={siteData.home.projects.title}
+            currentProjectId={null}  
+          />
           <SectionSkills />
           <SectionContacts />
         </section>

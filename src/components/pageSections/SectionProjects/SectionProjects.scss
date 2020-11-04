@@ -87,7 +87,17 @@
           height: 60%;
           left: 0;
           bottom: 0;
-          background: linear-gradient(180deg, transparent 0, rgba(0,0,0,.8) 70%);
+          background-image: linear-gradient(
+            to top,
+            rgba(0,0,0,.9) 0%,
+            rgba(0,0,0,.8) 10%,
+            rgba(0,0,0,.7) 30%,
+            rgba(0,0,0,.5) 50%,
+            rgba(0,0,0,.3) 70%,
+            rgba(0,0,0,.2) 80%,
+            rgba(0,0,0,.1) 90%,
+            rgba(0,0,0,0) 100%
+          );
         }
 
         // Image
@@ -119,22 +129,43 @@
             color: $golden-color;
             font-weight: 500;
             font-size: 24px;
-            line-height: 1.3;
+            line-height: 1.2;
+            text-align: center;
             @include media-small {
               font-size: 22px;
             }
           }
-          .project-description {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;  
+          .project-info-block {
             overflow: hidden;
-            opacity: 0;
-            transition: opacity .3s ease-in-out;
-            line-height: 1.5;
-            color: rgba(256,256,256,.7);
-            @include media-small {
-              font-size: 14px;
+            .project-description {
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;  
+              overflow: hidden;
+              line-height: 1.3;
+              color: rgba(256,256,256,.7);
+              margin-bottom: 15px;
+              opacity: 0;
+              transition: opacity .3s ease-in-out;
+              @include media-small {
+                font-size: 14px;
+              }
+            }
+            .project-date-block {
+              display: flex;
+              justify-content: flex-end;
+              opacity: 0;
+              transition: opacity .3s ease-in-out;
+              .date {
+                color: rgba(256,256,256,.7);
+                font-size: 14px;
+                border: 1px solid rgba(256,256,256,.7);
+                border-radius: 20px;
+                padding: 0 10px;
+                @include media-small {
+                  font-size: 12px;
+                }
+              }
             }
           }
         }
@@ -155,11 +186,16 @@
           }
           .project-text-container {
             height: 60%;
-            transition: all .8s ease-in-out;
+            transition: height .8s ease-in-out;
             .project-description {
               opacity: 1;
               transition: opacity .5s ease-in-out;
               transition-delay: .3s;
+            }
+            .project-date-block {
+              opacity: 1;
+              transition: opacity .7s ease-in-out;
+              transition-delay: .7s;
             }
           }
         }
