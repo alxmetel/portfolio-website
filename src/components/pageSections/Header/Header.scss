@@ -66,9 +66,15 @@
               &:hover {
                 color: $golden-color-dark;
               }
+              @include media-medium {
+                font-size: 18px;
+              }
             }
             &:not(:last-child) {
               margin-right: 60px;
+              @include media-medium {
+                margin-right: 50px;
+              }
             }
           }
         }
@@ -154,7 +160,7 @@
                 text-align: center;
                 margin-bottom: 40px;
                 a {
-                  font-size: 24px;
+                  font-size: 22px;
                 }
                 &:not(:last-child) {
                   margin-right: 0;
