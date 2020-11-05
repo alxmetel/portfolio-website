@@ -1,4 +1,11 @@
 {
+  "nav_bar": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "My Projects",
+    "skills": "My Skills",
+    "contacts": "Hire Me"
+  },
   "home": {
     "about": {
       "title": "About Me",

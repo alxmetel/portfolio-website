@@ -18,16 +18,26 @@
   .content-container {
     display: flex;
     justify-content: space-between;
+
+    // Logo Block
     .logo-block {
       display: flex;
       align-items: center;
       z-index: 2;
       a {
-        font-size: 30px;
-        font-weight: 600;
-        color: $golden-color;
-        &:hover {
-          color: $golden-color-dark;
+        position: relative;
+        height: 40px;
+        @include media-medium {
+          height: 30px;
+        }
+        @include media-small {
+          height: 30px;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
         }
       }
     }
