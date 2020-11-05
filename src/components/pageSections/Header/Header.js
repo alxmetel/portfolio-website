@@ -30,13 +30,18 @@ const Header = () => {
     toggleMenu();
   }
 
-  const scrollWithOffset = (el, offset) => {
-    const elementPosition = el.offsetTop - offset;
-    window.scroll({
+  function scrollWithOffset(el, offset) {
+    const container = document.querySelector('.page-container'); // Because its parent has the height 100vh (parallax)
+    const elementPosition = el.getBoundingClientRect().top + container.scrollTop + offset;
+    container.scrollTo({
       top: elementPosition,
-      left: 0,
       behavior: "smooth"
     });
+  }
+
+  function getSectionPadding(elem) {
+    const childElem = elem.querySelector('.content-container');
+    return parseInt(getComputedStyle(childElem).paddingTop);
   }
 
   function renderNavigationBlock() {
@@ -44,11 +49,11 @@ const Header = () => {
       <div className="nav-block">
         <nav>
           <ul>
-            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)}    onClick={closeMenu}>{siteData.nav_bar.home}</NavLink></li>
-            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, -630)} onClick={closeMenu}>{siteData.nav_bar.about}</NavLink></li>
-            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.projects}</NavLink></li>
-            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.skills}</NavLink></li>
-            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.contacts}</NavLink></li>
+            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>{siteData.nav_bar.home}</NavLink></li>
+            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, getSectionPadding(el)-70)} onClick={closeMenu}>{siteData.nav_bar.about}</NavLink></li>
+            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -80)} onClick={closeMenu}>{siteData.nav_bar.projects}</NavLink></li>
+            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -80)} onClick={closeMenu}>{siteData.nav_bar.skills}</NavLink></li>
+            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, -80)} onClick={closeMenu}>{siteData.nav_bar.contacts}</NavLink></li>
           </ul>
         </nav>
       </div>
