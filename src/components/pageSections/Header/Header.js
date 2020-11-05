@@ -3,6 +3,8 @@ import './Header.scss';
 import smoothscroll from 'smoothscroll-polyfill';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { toggleBodyNoscroll } from '../../../utilities/domFunctions';
+import siteData from '../../../siteData.json';
+import logo from '../../../assets/alx-logo.png';
 
 const Header = () => {
 
@@ -42,11 +44,11 @@ const Header = () => {
       <div className="nav-block">
         <nav>
           <ul>
-            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>Home</NavLink></li>
-            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, -630)} onClick={closeMenu}>About Me</NavLink></li>
-            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>Projects</NavLink></li>
-            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>My Skills</NavLink></li>
-            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>Hire Me</NavLink></li>
+            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)}    onClick={closeMenu}>{siteData.nav_bar.home}</NavLink></li>
+            <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, -630)} onClick={closeMenu}>{siteData.nav_bar.about}</NavLink></li>
+            <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.projects}</NavLink></li>
+            <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.skills}</NavLink></li>
+            <li><NavLink to='/#contacts'      scroll={el => scrollWithOffset(el, -450)} onClick={closeMenu}>{siteData.nav_bar.contacts}</NavLink></li>
           </ul>
         </nav>
       </div>
@@ -76,7 +78,9 @@ const Header = () => {
       <header id="site-header">
         <div className="content-container">
           <div className="logo-block">
-            <a href='/'>alX</a>
+            <a href='/'>
+              <img src={logo} alt="logo" />
+            </a>
           </div>
           {renderNavigationBlock()}
           {renderHamburgerMenu()}
