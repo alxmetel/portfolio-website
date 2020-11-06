@@ -13,7 +13,9 @@
   align-items: flex-end;
   padding: 0 20px;
   padding-bottom: 30px;
-  // z-index: 1;
+  @include media-medium {
+    padding-bottom: 25px;
+  }
   @include media-small {
     padding-bottom: 20px;
   }

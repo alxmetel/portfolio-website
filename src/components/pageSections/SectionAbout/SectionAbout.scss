@@ -3,7 +3,7 @@
 .section-about {
   margin-bottom: 80px;
   .content-container {
-    padding-top: 180px;
+    padding-top: 190px;
     padding-bottom: 20px;
     @include media-medium {
       padding-top: 100px;
@@ -49,20 +49,20 @@
       right: 20px;
       background: url(../../../assets/my-photo.jpg);
       background-repeat: no-repeat;
-      background-position: top -130px right;
+      background-position: bottom -100px right;
       background-size: cover;
       @include media-medium {
         width: 60%;
         right: 0;
-        background-position: top 40% right;
+        background-position: bottom 40% right;
       }
       @include media-ipad-pro {
-        background-position: top 60% right;
+        background-position: bottom -180px right;
       }
       @include media-small {
         width: 100%;
         right: 0;
-        background-position: top 40% right;
+        background-position: bottom 40% left 0;
       }
     }
     .overlay {
