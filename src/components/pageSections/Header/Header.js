@@ -31,12 +31,14 @@ const Header = () => {
   }
 
   function scrollWithOffset(el, offset) {
-    const container = document.querySelector('.page-container'); // Because its parent has the height 100vh (parallax)
-    const elementPosition = el.getBoundingClientRect().top + container.scrollTop + offset;
-    container.scrollTo({
-      top: elementPosition,
-      behavior: "smooth"
-    });
+    setTimeout(() => { // To let DOM get rendered on switching to another page
+      const container = document.querySelector('.page-container'); // Because its parent has the height 100vh (parallax)
+      const elementPosition = el.getBoundingClientRect().top + container.scrollTop + offset;
+      container.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      });
+    }, 50);
   }
 
   function getSectionPadding(elem) {

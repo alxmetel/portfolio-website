@@ -6,11 +6,15 @@
     "skills": "My Skills",
     "contacts": "Hire Me"
   },
+  "footer": "© Created by Alex Metelchenko",
   "home": {
     "about": {
       "title": "About Me",
-      "p1": "Professional and enthusiastic software developer, specializing in ReactJS and in implementing complex UI, with more than 3 years of commercial work experience in developing beautiful and functional websites and applications for various industries.",
-      "p2": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus."
+      "body_text": [
+        "Hi, my name is Alex!",
+        "I'm a professional and enthusiastic software developer with more than 3 years of commercial work experience in developing beautiful and functional websites and applications for various industries.",
+        "Please take a look at my works and feel free to contact me with any questions and propositions."
+      ]
     },
     "projects": {
       "title": "My Projects",
