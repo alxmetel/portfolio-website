@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import Loader from '../../../shared/Loader/Loader';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
 const PageCOC = props => {
@@ -41,9 +42,7 @@ const PageCOC = props => {
       />
     )
   } else {
-    return (
-      <div>Loading...</div> // Replace with Loader!!!
-    )
+    return <Loader />
   }
 }
 

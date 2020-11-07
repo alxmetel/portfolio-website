@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SectionSkills.scss';
 import { connect } from 'react-redux';
+import Loader from '../../shared/Loader/Loader';
 import siteData from '../../../siteData.json';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import TechnologyItem from '../../shared/TechnologyItem/TechnologyItem';
@@ -76,9 +77,7 @@ const SectionSkills = props => {
         )
       })
     } else {
-      return (
-        <div>Loading...</div> // Replace with Loader
-      )
+      return <Loader />
     }
   }
 
