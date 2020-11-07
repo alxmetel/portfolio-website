@@ -1,5 +1,4 @@
 import React from 'react';
-import './Main.scss';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../pages/PageHome/PageHome';
 import PageIndexProjects from '../../pages/PageIndexProjects/PageIndexProjects';

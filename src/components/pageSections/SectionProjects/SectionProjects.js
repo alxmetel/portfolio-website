@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './SectionProjects.scss';
 import { connect } from 'react-redux';
+import Loader from '../../shared/Loader/Loader';
 import SlickSlider from '../../shared/SlickSlider/SlickSlider';
 import SectionTitle from '../../shared/SectionTitle/SectionTitle';
 import ProjectCard from '../../shared/ProjectCard/ProjectCard';
@@ -71,9 +72,7 @@ const SectionProjects = props => {
         />
       )
     } else {
-      return (
-        <div>Loading...</div> // Replace with Loader
-      )
+      return <Loader />
     }
   }  
 

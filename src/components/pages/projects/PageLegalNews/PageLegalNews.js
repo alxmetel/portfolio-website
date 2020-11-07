@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import Loader from '../../../shared/Loader/Loader';
 import ProjectPageTemplate from '../../ProjectPageTemplate/ProjectPageTemplate';
 
 const PageLegalNews = props => {
@@ -41,9 +42,7 @@ const PageLegalNews = props => {
       />
     )
   } else {
-    return (
-      <div>Loading...</div> // Replace with Loader!!!
-    )
+    return <Loader />
   }
 }
 
