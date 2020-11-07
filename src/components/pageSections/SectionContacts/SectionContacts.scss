@@ -4,10 +4,7 @@
 .section-contacts {
   .container {
     display: flex;
-    @include media-phone-land {
-      flex-direction: column;
-    }
-    @include media-small {
+    @include media-under-tablet {
       flex-direction: column;
     }
 
@@ -17,12 +14,11 @@
       @include media-tablet {
         width: 40%;
       }
-      @include media-phone-land {
+      @include media-under-tablet {
         width: 100%;
         margin-bottom: 40px;
       }
       @include media-small {
-        width: 100%;
         margin-bottom: 30px;
       }
       .info-item-wrapper {
