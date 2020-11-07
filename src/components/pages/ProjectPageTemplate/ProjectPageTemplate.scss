@@ -26,6 +26,9 @@
       @include media-medium {
         height: 375px;
       }
+      @include media-phone-land {
+        height: 100vh;
+      }
       @include media-small {
         height: 350px;
       }
@@ -48,6 +51,9 @@
         @include media-ipad-pro {
           height: 150%;
           transform: translateZ(-100px) translateY(-145%) scale(2);
+        }
+        @include media-phone-land {
+          transform: translateZ(-100px) translateY(-40%) scale(2);
         }
         @include media-small {
           height: 130%;

@@ -16,7 +16,7 @@
 
 // Phones, landscape view
 @mixin media-phone-land {
-  @media (min-width: 500px) and (max-width: 767px) {
+  @media (min-width: 560px) and (max-width: 830px) and (orientation: landscape) {
     @content;
   }
 }
