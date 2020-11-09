@@ -51,7 +51,7 @@ const Header = () => {
       <div className="nav-block">
         <nav>
           <ul>
-            <li><NavLink to='/#header-video'  scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>{siteData.nav_bar.home}</NavLink></li>
+            <li><NavLink to='/#home'          scroll={el => scrollWithOffset(el, 0)} onClick={closeMenu}>{siteData.nav_bar.home}</NavLink></li>
             <li><NavLink to='/#about'         scroll={el => scrollWithOffset(el, getSectionPadding(el)-70)} onClick={closeMenu}>{siteData.nav_bar.about}</NavLink></li>
             <li><NavLink to='/#projects'      scroll={el => scrollWithOffset(el, -80)} onClick={closeMenu}>{siteData.nav_bar.projects}</NavLink></li>
             <li><NavLink to='/#skills'        scroll={el => scrollWithOffset(el, -80)} onClick={closeMenu}>{siteData.nav_bar.skills}</NavLink></li>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './PageHome.scss';
 import siteData from '../../../siteData.json';
 import SectionHeaderVideo from '../../pageSections/SectionHeaderVideo/SectionHeaderVideo';
 import SectionAbout from '../../pageSections/SectionAbout/SectionAbout';
@@ -13,13 +12,17 @@ const PageHome = () => {
       <div className="page-container">
         <SectionHeaderVideo />
         <section className="main-content">
-          <SectionAbout />
+          <div className="section-wrapper top-clipped-block">
+            <SectionAbout />
+          </div>
           <SectionProjects
             title={siteData.home.projects.title}
             currentProjectId={null}  
           />
           <SectionSkills />
-          <SectionContacts />
+          <div className="section-wrapper bottom-clipped-block">
+            <SectionContacts />
+          </div>
         </section>
       </div>
     </div>

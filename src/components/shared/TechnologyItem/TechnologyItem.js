@@ -3,6 +3,7 @@ import './TechnologyItem.scss';
 import siteData from '../../../siteData.json';
 import { Link } from "react-router-dom";
 import { Menu, Dropdown } from 'antd';
+import Loader from '../../shared/Loader/Loader';
 // import 'antd/lib/menu/style/css';
 // import 'antd/lib/dropdown/style/css';
 
@@ -14,7 +15,10 @@ const TechnologyItem = props => {
       return (
         <Menu.Item key={i}>
           <Link to={elem.path} className="dropdown-menu-item">
-            <img src={elem.bg_images.square_sm} className="project-image" />
+            <div className="image-container">
+              <Loader />
+              <img src={elem.bg_images.square_sm} className="image" alt="" />
+            </div>
             <div className="project-title">{elem.title}</div>
           </Link>
         </Menu.Item>
