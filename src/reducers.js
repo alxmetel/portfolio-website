@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { sortArrayByValue } from './utilities/utilityFunctions';
 
 const initialState = {
   projectsData: {},
@@ -10,7 +11,7 @@ const portfolioData = (state = initialState, action) => {
     case 'STORE_PROJECTS_DATA':
       return {
         ...state,
-        projectsData: action.data
+        projectsData: sortArrayByValue(action.data, 'desc')
       }
 
     case 'STORE_TECH_DATA':

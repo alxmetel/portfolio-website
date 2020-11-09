@@ -33,13 +33,13 @@ const ProjectGallery = props => {
   function handleFullscreenChange() {
 
     function toggleFullscreenState() {
-      if (document.fullscreenElement === null) {
+      if (document.webkitCurrentFullScreenElement === null || document.fullscreenElement === null) {
         setFullscreenIsActivated(false)
       } else {
         setFullscreenIsActivated(true)
       }
     }
-
+    
     /* Standard syntax */
     document.addEventListener("fullscreenchange", function () {
       toggleFullscreenState();

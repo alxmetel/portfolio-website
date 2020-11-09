@@ -19,7 +19,7 @@ body {
   
   // Dark Mode
   .dark {
-    background: rgba(0, 0, 0, 1);
+    background: #000;
     color: $main-font-color;
   }
 }
@@ -36,7 +36,32 @@ main.page-main-section {
 }
 
 .page-content {
+  // Parallax
+  overflow: hidden;
+  height: 100vh;
+
   width: 100%;
+}
+
+.page-container {
+  // Parallax
+  transform-style: preserve-3d;
+  perspective: 100px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// Main Content
+.main-content {
+  transform-style: inherit; // Parallax
+  z-index: 1;
+  position: relative;
+  background: #000;
+  margin-bottom: 100px;
+  @include media-small {
+    margin-bottom: 130px;
+  }
 }
 
 .page-section {
@@ -51,14 +76,33 @@ main.page-main-section {
   padding: 0 20px;
 }
 
-.main-content {
-  background: rgba(0, 0, 0, 1);
-  padding-bottom: 70px;
-  // will-change: scroll-position, contents, transform;
-  overflow: visible;
+// Clip Block Wrapper
+.section-wrapper {
+  width: 100%;
+}
+
+// Top Clipped Block
+.top-clipped-block {
+  will-change: transform, scroll-position, contents; // To prevent CSS rerendering in Chrome (flickering)
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 10vw);
+  background: #000;
+  transform: translateY(-10vw);
+  margin-bottom: calc(-10vw + 80px);
+}
+
+// Bottom Clipped Block
+$bottom-clip-gap: 100px;
+
+.bottom-clipped-block {
+  will-change: transform, scroll-position, contents; // To prevent CSS rerendering in Chrome (flickering)
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
+  background: #000;
+  transform: translateY($bottom-clip-gap);
+  margin-top: -$bottom-clip-gap;
+  padding-bottom: 100px;
   @include media-small {
-    padding-bottom: 40px;
-    margin-bottom: 20px;
+    padding-bottom: 50px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
   }
 }
 

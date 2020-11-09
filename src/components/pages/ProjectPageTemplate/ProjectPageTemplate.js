@@ -108,24 +108,26 @@ const ProjectPageTemplate = props => {
         </section>
 
         <div className="main-content">
-          <div className="content-container">
-
-            <section className="spec-section">
+          <section className="spec-section">
+            <div className="content-container">
               {renderLinksBlock()}
               <div className="tech-stack-block">
                 {renderTechItems(getTechnologies())}
               </div>
-            </section>
-
-            <section className="body-section">
+            </div>
+          </section>
+          <section className="body-section">
+            <div className="content-container">
               {/* <img id="body-img-1" src={projectData.body_images.img1} /> */}
               {renderBodyParagraphs()}
-            </section>
-
-            <section className="gallery-section">
+            </div>
+          </section>
+          <section className="gallery-section">
+            <div className="content-container">
               <ProjectGallery galleryData={galleryImagesData} />
-            </section>
-
+            </div>
+          </section>
+          <div className="section-wrapper bottom-clipped-block">
             <SectionProjects
               title={siteData.project_template.other_projects_title}
               currentProjectId={currentProjectId}

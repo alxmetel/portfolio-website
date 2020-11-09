@@ -5,7 +5,7 @@ import headerVideoPoster from '../../../assets/header-video-poster.jpg';
 
 const SectionHeaderVideo = () => {
   return (
-    <section id="header-video" className="header-video-section">
+    <section id="home" className="header-video-section">
       <video
         poster={headerVideoPoster}
         autoPlay
