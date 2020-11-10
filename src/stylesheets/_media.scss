@@ -35,33 +35,16 @@
   }
 }
 
+// Fullscreen
+@mixin media-fullscreen {
+  @media all and (display-mode: fullscreen) {
+    @content;
+  }
+}
+
 // iPad Pro 12"
 @mixin media-ipad-pro {
   @media (min-width: 900px) and (max-width: 1199px) and (orientation: portrait) {
-    @content;
-  }
-}
-
-
-// COMBINED
-
-// Small
-@mixin media-small {
-  @media (max-width: 499px) {
-    @content;
-  }
-}
-
-// Under Tablet
-@mixin media-under-tablet {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
-
-// Medium
-@mixin media-medium {
-  @media (min-width: 500px) and (max-width: 1199px) {
     @content;
   }
 }
@@ -76,6 +59,30 @@
 // For Spec Section
 @mixin media-spec-block {
   @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+
+// COMBINED
+
+// Small
+@mixin media-small {
+  @media (max-width: 499px) {
+    @content;
+  }
+}
+
+// Medium
+@mixin media-medium {
+  @media (min-width: 500px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+// Under Tablet
+@mixin media-under-tablet {
+  @media (max-width: 767px) {
     @content;
   }
 }

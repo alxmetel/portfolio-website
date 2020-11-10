@@ -23,6 +23,7 @@
 
     // Slider Container
     .slider-container {
+      position: relative;
       margin-bottom: 50px;
       @include media-small {
         margin-bottom: 30px;
@@ -75,6 +76,9 @@
         opacity: .4;
         pointer-events: none;
         transition: all .3s ease-in-out;
+        @include media-phone-land {
+          height: 60vh;
+        }
         @include media-small {
           height: 300px;
         }
@@ -83,7 +87,7 @@
         &:after {
           content: '';
           position: absolute;
-          height: 60%;
+          height: 80%;
           width: 100%;
           left: 0;
           bottom: 0;
@@ -137,6 +141,7 @@
             }
           }
           .project-info-block {
+            width: 100%;
             overflow: hidden;
             .project-description {
               display: -webkit-box;
@@ -188,6 +193,9 @@
           .project-text-container {
             height: 60%;
             transition: height .8s ease-in-out;
+            @include media-phone-land {
+              height: 70%;
+            }
             .project-description {
               opacity: 1;
               transition: opacity .5s ease-in-out;
@@ -217,6 +225,11 @@
           letter-spacing: 1px;
         }
       }
+    }
+
+    // Loader Container
+    .loader-container {
+      margin-top: 0;
     }
   }
 }
