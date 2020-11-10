@@ -4,8 +4,7 @@ import siteData from '../../../siteData.json';
 import { Link } from "react-router-dom";
 import { Menu, Dropdown } from 'antd';
 import Loader from '../../shared/Loader/Loader';
-// import 'antd/lib/menu/style/css';
-// import 'antd/lib/dropdown/style/css';
+import 'antd/dist/antd.dark.min.css';
 
 const TechnologyItem = props => {
   const { projectsData, technologiesSortedData } = props;
@@ -19,7 +18,9 @@ const TechnologyItem = props => {
               <Loader />
               <img src={elem.bg_images.square_sm} className="image" alt="" />
             </div>
-            <div className="project-title">{elem.title}</div>
+            <div className="project-title-container">
+              <span>{elem.title}</span>
+            </div>
           </Link>
         </Menu.Item>
       )  
@@ -28,7 +29,7 @@ const TechnologyItem = props => {
 
   const dropdownMenu = (
     <Menu>
-      <header className="dropdown-menu-head">{siteData.home.skills.dropdown_menu_head}</header>
+      <header className="dropdown-menu-head">{siteData.home.skills.dropdown_menu_head} ({projectsData.length})</header>
       {dropdownMenuItems}
     </Menu>
   );
@@ -37,12 +38,12 @@ const TechnologyItem = props => {
     <Dropdown
       overlay={dropdownMenu}
       trigger={['click']}
-      getPopupContainer={trigger => trigger.parentElement} // Fix the bug with dropdown menu scrolling with the page when parent is 100vh
+      getPopupContainer={trigger => trigger.parentElement}
     >
       <div className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <div className="tech-item">
             <div className="image-container">
-              <img src={technologiesSortedData.image} className="tech-image" />
+              <img src={technologiesSortedData.image} className="tech-image" alt="" />
             </div>
             <div className="tech-name">{technologiesSortedData.name}</div>
         </div>

@@ -81,6 +81,9 @@
           width: 15%;
           height: 40vw;
         }
+        @include media-fullscreen {
+          height: 30vw;
+        }
       }
     }
 

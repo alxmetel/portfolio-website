@@ -67,7 +67,7 @@
   .input-field-error {
     height: 0;
     opacity: 0;
-    color: $red;
+    color: $red-color;
     font-size: 16px;
     padding: 0 30px;
     transition: all .1s ease-out;
@@ -87,7 +87,7 @@
   // Invalid
   &.invalid {
     .input-field {
-      border: 1px solid $red;
+      border: 1px solid $red-color;
     }
     .input-field-error {
       height: 40px;

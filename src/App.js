@@ -28,17 +28,25 @@ const App = props => {
   function fetchProjectsData() {
     const url = 'https://portfolio-website-18313.firebaseio.com/projects.json';
 
-    fetch(url).then(response => response.json()).then(data => {
-      props.storeProjectsData(data);
-    })
+    fetch(url)
+      .then(response => response.json()).then(data => {
+        props.storeProjectsData(data);
+      })
+      .catch(error => {
+        console.log("Projects data fetch error: ", error)
+      })
   }
 
   function fetchTechnologiesData() {
     const url = 'https://portfolio-website-18313.firebaseio.com/technologies.json';
 
-    fetch(url).then(response => response.json()).then(data => {
-      props.storeTechData(data);
-    })
+    fetch(url)
+      .then(response => response.json()).then(data => {
+        props.storeTechData(data);
+      })
+      .catch(error => {
+        console.log("Technologies data fetch error: ", error)
+      })
   }
 
   return (

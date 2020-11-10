@@ -10,8 +10,11 @@
     @include media-ipad-pro {
       padding-top: 130px;
     }
+    @include media-phone-land {
+      padding-top: 110px;
+    }
     @include media-small {
-      padding-top: 60px;
+      padding-top: 70px;
     }
 
     // Title
