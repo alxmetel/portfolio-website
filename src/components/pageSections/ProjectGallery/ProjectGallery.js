@@ -90,7 +90,7 @@ const ProjectGallery = props => {
 
   function renderThumbnails() {
     return sortArrayByValue(galleryData, 'asc').map(elem => {
-      return <img src={elem.thumbnail} key={elem.id} />
+      return <img src={elem.thumbnail} key={elem.id} alt="" />
     })
   }
 
@@ -135,12 +135,12 @@ const ProjectGallery = props => {
       } else if (elem.image_type === "picture") {
         return (
           <div className="slide-wrapper" key={elem.id}>
-            <img src={elem.image} />
+            <img src={elem.image} alt="" />
             {renderImageDescription(elem)}
             {renderButtonsBlock()}
           </div>
         )
-      }
+      } else return null;
     })
   }
 
@@ -172,6 +172,7 @@ const ProjectGallery = props => {
     className: "images-slider",
     asNavFor: thumbnails,
     ref: slider => slidesCarousel = slider,
+    lazyLoad: true,
     infinite: false,
     beforeChange: (oldIndex, newIndex) => handleBeforeIndexChange(oldIndex, newIndex),
     afterChange: index => handleAfterIndexChange(index),

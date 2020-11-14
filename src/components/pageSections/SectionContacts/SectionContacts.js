@@ -58,17 +58,25 @@ const SectionContacts = () => {
       _subject: formSubject,
       message: formMessage
     }
-
+    
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data)
-    }).then(response => response.json()).then(response => {
-      console.log(response);
-      if (response.success === 'true') {
-        clearForm();
-        setDisplayValidation(false);
-      }
     })
+      .then(response => response.json()).then(response => {
+        if (response.success === 'true') {
+          clearForm();
+          setDisplayValidation(false);
+          alert('Message sent');
+        } else {
+          console.log(response);
+          alert('Sorry, your message could not be sent');
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        alert('Sorry, your message could not be sent');
+      })
   }
 
   return (
@@ -84,15 +92,15 @@ const SectionContacts = () => {
               </a>
             </div>
             <div className="info-item-wrapper">
-              <a className="info-item-link-container" href={`tel:${siteData.home.contacts.phone.link}`}>
-                <div className="info-item-icon"><FontAwesomeIcon icon={faPhoneSquare} /></div>
-                <div className="info-item-text">{siteData.home.contacts.phone.title}</div>
-              </a>
-            </div>
-            <div className="info-item-wrapper">
               <a className="info-item-link-container" href={siteData.home.contacts.linkedin.link} target="_blank" rel="noopener noreferrer">
                 <div className="info-item-icon"><FontAwesomeIcon icon={faLinkedin} /></div>
                 <div className="info-item-text">{siteData.home.contacts.linkedin.title}</div>
+              </a>
+            </div>
+            <div className="info-item-wrapper">
+              <a className="info-item-link-container" href={`tel:${siteData.home.contacts.phone.link}`}>
+                <div className="info-item-icon"><FontAwesomeIcon icon={faPhoneSquare} /></div>
+                <div className="info-item-text">{siteData.home.contacts.phone.title}</div>
               </a>
             </div>
             <div className="info-item-wrapper">
