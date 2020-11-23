@@ -124,7 +124,6 @@ const ProjectGallery = props => {
               controls
               muted
               poster={elem.video_poster}
-              preload="metadata"
               onEnded={e => handleEndVideo(e)}
             >
               <source src={elem.image} type="video/mp4"></source>

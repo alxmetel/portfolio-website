@@ -102,6 +102,7 @@
             rgba(0,0,0,.1) 90%,
             rgba(0,0,0,0) 100%
           );
+          transform: scale(1.01); // Fix the bug with 1px gaps on the card's sides
         }
 
         // Image
