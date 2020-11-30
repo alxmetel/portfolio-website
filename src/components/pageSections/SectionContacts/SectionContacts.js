@@ -36,6 +36,7 @@ const SectionContacts = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    window.gtag('event', 'submit_contact_form')
     if (formIsValid) {
       sendMessage();
     } else {
@@ -86,25 +87,45 @@ const SectionContacts = () => {
         <div className="container">
           <div className="info-block">
             <div className="info-item-wrapper">
-              <a className="info-item-link-container" href={siteData.home.contacts.resume.link} target="_blank" rel="noopener noreferrer">
+              <a
+                className="info-item-link-container"
+                href={siteData.home.contacts.resume.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => window.gtag('event', 'resume_download')}
+              >
                 <div className="info-item-icon"><FontAwesomeIcon icon={faFilePdf} /></div>
                 <div className="info-item-text">{siteData.home.contacts.resume.title}</div>
               </a>
             </div>
             <div className="info-item-wrapper">
-              <a className="info-item-link-container" href={siteData.home.contacts.linkedin.link} target="_blank" rel="noopener noreferrer">
+              <a
+                className="info-item-link-container"
+                href={siteData.home.contacts.linkedin.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => window.gtag('event', 'linkedin_review')}
+              >
                 <div className="info-item-icon"><FontAwesomeIcon icon={faLinkedin} /></div>
                 <div className="info-item-text">{siteData.home.contacts.linkedin.title}</div>
               </a>
             </div>
             <div className="info-item-wrapper">
-              <a className="info-item-link-container" href={`tel:${siteData.home.contacts.phone.link}`}>
+              <a
+                className="info-item-link-container"
+                href={`tel:${siteData.home.contacts.phone.link}`}
+                onClick={() => window.gtag('event', 'phone_call')}
+              >
                 <div className="info-item-icon"><FontAwesomeIcon icon={faPhoneSquare} /></div>
                 <div className="info-item-text">{siteData.home.contacts.phone.title}</div>
               </a>
             </div>
             <div className="info-item-wrapper">
-              <a className="info-item-link-container" href={`mailto:${siteData.home.contacts.email.link}`}>
+              <a
+                className="info-item-link-container"
+                href={`mailto:${siteData.home.contacts.email.link}`}
+                onClick={() => window.gtag('event', 'send_mail')}
+              >
                 <div className="info-item-icon"><FontAwesomeIcon icon={faEnvelope} /></div>
                 <div className="info-item-text">{siteData.home.contacts.email.title}</div>
               </a>
